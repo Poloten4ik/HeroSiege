@@ -1,0 +1,40 @@
+Characters Werewolf for Most of the games.<br>
+Characters can be inserted into an RPG,<br>
+Shooter, Horror, fantasy.<br>
+Location of creating a forest,<br>
+swamps,caves,sewers and other dark places.<br>
+
+Character Werewolf
+
+PBR textures(Metallic Sheder)
+
+Contains 13 animations
+
+-Walk(0-30)
+-Run(31-55)
+-Run(2)(56-80)
+-Jump(331-400)
+-Idle(81-200)
+-Shout(201-330)
+-Get Hit(401-430)
+-Dead(430-485)
+-Attack(1)(486-560)
+-Attack(2)(561-635)
+-Attack(3)(636-710)
+-Attack(4)(711-785)
+-Attack(5)(786-870)
+
+PBR textures.
+
+-Albedo
+-AO
+-Metallic
+-Normal
+(all 2048-2048 size)
+
+
+Polys: 7,579
+
+Tris:  13,979
+
+Verts: 7,669

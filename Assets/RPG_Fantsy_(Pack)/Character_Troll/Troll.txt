@@ -1,0 +1,39 @@
+Characters Troll for Most of the games.<br>
+Characters can be inserted into an RPG,<br>
+Shooter, Horror, fantasy.<br>
+Location of creating a forest,<br>
+swamps,caves,sewers and other dark places.<br>
+
+RPG Troll
+
+PBR textures(Metallic Sheder)
+
+Contains 11 animations
+
+-Walk(0-34)
+-Run(35-61)
+-Idle(62-122)
+-Idle other(123-370)
+-Shout(371-480)
+-Jump(481-545)
+-Get Hit(546-570)
+-Dead(571-618)
+-Attack(1)(619-710)
+-Attack(2)(711-800)
+-Attack(3)(801-885)
+
+
+PBR textures.
+
+-Albedo
+-AO
+-Metallic
+-Normal
+(all 2048-2048 size)
+
+
+Polys: 16,045
+
+Tris:  29,202
+
+Verts: 15,786
