@@ -15,11 +15,15 @@ namespace Assets.Scripts.Player
         [Header("Rotation config")]
         [SerializeField] private float rotationSpeed = 1f;
 
+        [Header("Gravity")]
+        [SerializeField] private float gravityScale = 1;
+
         [Header("References")]
         [SerializeField] private CharacterController controller;
         [SerializeField] private Animator anim;
 
         private Camera mainCamera;
+        private float gravity;
         public void DoDamage()
         {
             anim.SetTrigger("Death");
@@ -76,6 +80,8 @@ namespace Assets.Scripts.Player
                 anim.SetBool("Running", false);
             }
 
+            gravity += gravityScale * Physics.gravity.y * Time.deltaTime;
+            moveDirection.y = gravity;
             controller.Move(moveDirection * moveSpeed * Time.deltaTime);
         }
 
