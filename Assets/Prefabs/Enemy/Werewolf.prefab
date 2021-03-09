@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4545124850171595069}
   - component: {fileID: 9206125070675408773}
   - component: {fileID: -8293705990971729659}
-  - component: {fileID: -1457740746724923054}
+  - component: {fileID: -1066198946285295904}
   m_Layer: 11
   m_Name: Werewolf
   m_TagString: Untagged
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7330a6b59eda24799ac2ab61d425e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1457740746724923054
+--- !u!114 &-1066198946285295904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,7 +294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949f998d1c2e5b47a63201146ef1a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 80
+  health: 40
+  followRadius: 15
+  castlePosition: {fileID: 2527362591398672167, guid: 4399966425360324188d7de0959709f7,
+    type: 3}
+  aIDestinationSetter: {fileID: -3754852480167010283}
 --- !u!1 &1000010042732838
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Enemy;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,10 @@ namespace Assets.Scripts.Player
         [Header("References")]
         [SerializeField] private CharacterController controller;
         [SerializeField] private Animator anim;
+        [SerializeField] private Damageable damageable;
+
+        [Header("Player Options")]
+        [SerializeField] private int health = 100;
 
         private Camera mainCamera;
         private float gravity;
@@ -32,7 +37,7 @@ namespace Assets.Scripts.Player
         private void Start()
         {
             mainCamera = Camera.main;
-
+            damageable.OnRecieveDamage += ReciveDamage;
         }
 
         private void Awake()
@@ -85,7 +90,11 @@ namespace Assets.Scripts.Player
             controller.Move(moveDirection * moveSpeed * Time.deltaTime);
         }
 
-
+        private void ReciveDamage(int damage)
+        {
+            health -= damage;
+            print(health);
+        }
     }
 
 }

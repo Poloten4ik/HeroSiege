@@ -397,13 +397,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204573281}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -2, y: 0, z: -84.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1656262354}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &204573283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,10 +418,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 1000012459049514, guid: bd3b3bdf0682b6640a6e1c9e218d7bd1, type: 3}
-  - {fileID: 1000010029273196, guid: f9fd2cb6ba583b14887924cc02fea5a5, type: 3}
-  - {fileID: 1000012452689070, guid: 09340ab94fc2a194bb09c3e917f67921, type: 3}
   spawnDuration: 1
-  numberOfEnemies: 2
+  nextWaveDelay: 4
+  numberOfEnemies: 1
 --- !u!1 &213552008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2786902602012978413, guid: 41fd9719f2bcac2429188d8e78164e20,
@@ -1168,6 +1167,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 96.41, y: -30, z: 0}
+--- !u!1 &731186240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2787337462963762433, guid: 41fd9719f2bcac2429188d8e78164e20,
+    type: 3}
+  m_PrefabInstance: {fileID: 2787337464221810780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &731186241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731186240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7330a6b59eda24799ac2ab61d425e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &755762080
 GameObject:
   m_ObjectHideFlags: 3
@@ -1587,7 +1604,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-21466
+  m_Name: pb_Mesh14926
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1750,7 +1767,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-33530
+  m_Name: pb_Mesh-1586
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2156,7 +2173,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-20536
+  m_Name: pb_Mesh15042
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2364,7 +2381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAYIexp5PImUQIAAP0EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMly4jAQ/RVK5wmFWZO5zRhC5kCSCjOViy+K1MYqZMmlJUBS/Pu0ZIMdxxfLr193v17kTyKUrYA5bdZG8I3mQH4OSDiTH4PW+ABHutNqKz7gwnkV3BWBRCPnhTqhEU+Cm9UlOCPYL7WTgTxC0CuRa1Ou+A5SbZ1FOKfSApqMdsFbIfQ5IMfG4dS8P8J7cMYTA+XAtKzFbJjc4dMjL6bDeYCjj1dM0rICHrS3rsnskgJPkaiwroYTamBaSmEbUcSdqlh0SivrsSQkcEGxyCgn8AsQu8Lhx7jr/JTnFlyjzdDTUhjsVR2V/NZ1A0tq97Wydyp9yDOezaOmOujmm/0miebc6PLhkjcZhRyuEGz/Qk+MWtfpcBdefhXu1YHKPX2T8FqAetRro73iaHTGB1dvYbzshLrWlhbA9i2v1toDffV9pkk703Os/phKUb4FZDitga3Usd93wQcMTuYPCo47YptIiAYR/yz8pbvuMjWGe2GsQ1OTUAV1b9qbQCWr2LNQjHepNgoi3GiuQFHpTs8YxvVH2LN10vYs9zRcmyZ5Y7vchp5LhFv+aNQzPevDdVi20IcN2OLJOykUtKKD4RH7lGql6g3r9uTitvUmp6zjtvOCf10tspjwhPLpYnE7y3M+ub3hc87GE5jO7oAvbhkjcfeEwjqpfK6FNu3Bqak2uMI9u/xNBmtDq7jt3NDDWnyUutNyoXK9ZQZAPdURrsLBYBK8lXzFBTZoC84JFedNPjMiNdsDz66Bsljp6ugMzdooGanEu3YByUga/yEZOZPzf1BLAwQUAAAICAAAGCHsZwg56m0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0krlximFiiom5uYVpWlqKsYVuillKspFxqompZWqKuUVyslIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAGCHsaeTyJlECAAD9BAAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAGCHsZwg56m0AAAB4AAAACQAkAAAAAAAAAAAAAACeAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAFYDAAAAAA==
+    dataString: UEsDBBQAAAgIAAAYIewS+DjrUAIAAPwEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMlS4zAQ/ZWUzgMVZyEwtxkTwhxYiswUF1+E1I5VkSWXFpJA5d+nJSuxMb7Yev26+/UifxKhbAPMabMygj9oDuTniIRv8mPUGe9hTzdarcUHnDivgrsqkGjkvFAnNOJZcLO6BmcE+6U2MpDHCHolSm3qJd9Arq2zCJdUWkCT0S54K4Q+R2SfHA7p/RHeoyN+MVAOTMdazC+zG3wG5MXs8irA0ccrJmndAA/aO9dsfkqBX5GosK7ECTUwLaWwSRRxhyYWndPGeiwJCVxQLDLKCfwKxKZyeJj0nZ/K0oJL2gw93AqDvWqjkt+6bWBN7bZV9k6lD3km0/EsimqjPnwjXGTRXBpd358SZ+OQxFWCbV/ogVHrei3uw7dflXu1o3JL3yS8VqAe9cporzganfHB1VuY3PZCnYvLK2DbjtdqHYC++T7UrBvqMZa/z6Wo3xIDj2upY7tvwhkMDuYPyo0rYhML0SDhn4W/dNPfpWS4E8Y6NKV0Kmh7094EKlnGjoVSvMu1URDhpLgBRaU7PGMYN5zgwNZLO7Dc0XBrUvJkO12GgUuEO/54PDA96915VLbSuwew1ZN3UijoRAfDI/Yp10q1C9bvyclt7U1JWc9t4wX/ulhkMeUZ5bPF4npelnx6fcGvOJtMYTa/Ab64ZozEzRMK66TyuRWa2oNTU11whVt2+pmMVoY2cdm5obuV+Kh1r+VClXrNDIB6aiOchYPBJHgp+ZILbNAanBMqzpt8FkRqtgVenAMVsdLl3hladFEK0oh37QJSkDz+QgpyJMf/UEsDBBQAAAgIAAAYIexnCDnqbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSuXGKYWKKibm5hWlaWoqxhW6KWUqykXGqiallaoq5RXKyUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAYIewS+DjrUAIAAPwEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAYIexnCDnqbQAAAHgAAAAJACQAAAAAAAAAAAAAAJ0CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAVQMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -2428,7 +2445,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -2527,7 +2544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1631124123
 Transform:
   m_ObjectHideFlags: 0
@@ -2535,13 +2552,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631124122}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -76.5, y: 0, z: -2}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -76.5, y: -1, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1656262354}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1631124124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2559,7 +2576,8 @@ MonoBehaviour:
   - {fileID: 1000010029273196, guid: f9fd2cb6ba583b14887924cc02fea5a5, type: 3}
   - {fileID: 1000012452689070, guid: 09340ab94fc2a194bb09c3e917f67921, type: 3}
   spawnDuration: 1
-  numberOfEnemies: 2
+  nextWaveDelay: 4
+  numberOfEnemies: 1
 --- !u!1 &1656262353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,7 +2616,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-22388
+  m_Name: pb_Mesh15056
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3072,7 +3090,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-20760
+  m_Name: pb_Mesh14938
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4002,6 +4020,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2787337462963762434, guid: 41fd9719f2bcac2429188d8e78164e20,
+        type: 3}
+      propertyPath: damageable
+      value: 
+      objectReference: {fileID: 731186241}
     - target: {fileID: 2787337462963762434, guid: 41fd9719f2bcac2429188d8e78164e20,
         type: 3}
       propertyPath: rotationSpeed

@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 4000010696668366}
   - component: {fileID: 33000012480165202}
   - component: {fileID: 23000011159590042}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2394,6 +2394,7 @@ GameObject:
   - component: {fileID: -7016311254603502173}
   - component: {fileID: -8872431743997183229}
   - component: {fileID: 3226765590912065267}
+  - component: {fileID: 4849780998216164850}
   m_Layer: 11
   m_Name: Demon
   m_TagString: Untagged
@@ -2453,7 +2454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 2527362591398672167, guid: 4399966425360324188d7de0959709f7, type: 3}
+  target: {fileID: 0}
 --- !u!114 &3040136783782555789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2495,8 +2496,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radius: 0.5
-  height: 2
+  radius: 0.89
+  height: 2.31
   repathRate: 0.5
   canSearch: 1
   canMove: 1
@@ -2511,9 +2512,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 2
-  endReachedDistance: 0.2
+  slowdownDistance: 7
+  pickNextWaypointDist: 10
+  endReachedDistance: 2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -2561,6 +2562,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
+  followRadius: 15
+  attackRadius: 2
+  castlePosition: {fileID: 2527362591398672167, guid: 4399966425360324188d7de0959709f7,
+    type: 3}
+  aIDestinationSetter: {fileID: -8234694706032400677}
+--- !u!114 &4849780998216164850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012459049514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19908260fdf90045a63eaa14c41b99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 2096214277}
 --- !u!1 &1000012627513092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,7 +3400,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000011337732902}
-  m_Layer: 0
+  - component: {fileID: 2096214276}
+  - component: {fileID: 2096214277}
+  m_Layer: 12
   m_Name: Bone_sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3403,6 +3424,32 @@ Transform:
   m_Father: {fileID: 4000010406135640}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2096214276
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013957200524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.74, y: 0.83, z: 0.22}
+  m_Center: {x: -2.48, y: -0.05, z: 0.05}
+--- !u!114 &2096214277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013957200524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71b297230a18a042b88a961deb0c0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &1000013967793724
 GameObject:
   m_ObjectHideFlags: 0

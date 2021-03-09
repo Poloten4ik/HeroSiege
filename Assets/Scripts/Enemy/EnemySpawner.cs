@@ -11,6 +11,7 @@ namespace Assets.Scripts.Enemy
 
         [Header("Wave parameters")]
         [SerializeField] private float spawnDuration;
+        [SerializeField] private float nextWaveDelay;
         [SerializeField] int numberOfEnemies;
 
         private void Start()
@@ -25,13 +26,14 @@ namespace Assets.Scripts.Enemy
             while (numberOfEnemies > countOfEnemies && wave != enemyPrefabs.Count)
             {
                 yield return new WaitForSeconds(spawnDuration);
-                Instantiate(enemyPrefabs[wave], transform.position, Quaternion.identity);
+                Instantiate(enemyPrefabs[wave], transform.position, transform.rotation);
                 countOfEnemies += 1;
 
                 if (numberOfEnemies == countOfEnemies)
                 {
                     countOfEnemies = 0;
-                    wave += 1;
+                    wave++;
+                    yield return new WaitForSeconds(nextWaveDelay);
                 }
             }
         }
