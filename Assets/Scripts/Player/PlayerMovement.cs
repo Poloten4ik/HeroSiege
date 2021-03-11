@@ -26,6 +26,7 @@ namespace Assets.Scripts.Player
 
         [Header("Player Options")]
         [SerializeField] private int health = 100;
+        [SerializeField] private float attackSpeed = 1f;
 
         private Camera mainCamera;
         private float gravity;
@@ -49,11 +50,17 @@ namespace Assets.Scripts.Player
             }
 
             Instance = this;
+            
+           
         }
 
         private void Update()
         {
             Move();
+            attackSpeed += 0.001f;
+
+            anim.SetFloat("AttackSpeed", attackSpeed);
+            print(attackSpeed);
         }
 
         private void Move()
