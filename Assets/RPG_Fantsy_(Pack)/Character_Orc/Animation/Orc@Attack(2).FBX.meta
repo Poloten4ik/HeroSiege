@@ -720,7 +720,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 21
+      additiveReferencePoseFrame: 13
     isReadable: 1
   meshes:
     lODScreenPercentages: []
