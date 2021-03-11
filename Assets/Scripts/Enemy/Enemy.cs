@@ -2,6 +2,7 @@
 using Pathfinding;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Assets.Scripts.Enemy
 {
@@ -13,14 +14,13 @@ namespace Assets.Scripts.Enemy
         [SerializeField] private float followRadius = 8f;
         [SerializeField] private float attackRadius = 2f;
         [SerializeField] private Transform castlePosition;
-        [SerializeField] private AIDestinationSetter aIDestinationSetter;
-
 
         private float distanceToPlayer;
         private float distanceToCaslte;
         Animator anim;
         Damageable damageable;
         PlayerMovement player;
+        NavMeshAgent agent;
 
 
         private void Start()
@@ -28,8 +28,9 @@ namespace Assets.Scripts.Enemy
             anim = GetComponent<Animator>();
             player = PlayerMovement.Instance;
             damageable = GetComponent<Damageable>();
-            
+            agent = GetComponent<NavMeshAgent>();
             damageable.OnRecieveDamage += ReciveDamage;
+            
         }
 
         private void Update()
@@ -42,17 +43,16 @@ namespace Assets.Scripts.Enemy
         {
             distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             distanceToCaslte = Vector3.Distance(transform.position, castlePosition.transform.position);
-
+           
             if (distanceToPlayer > followRadius)
             {
-                aIDestinationSetter.target = castlePosition;
+                agent.SetDestination(castlePosition.transform.position);
             }
-            else if (distanceToPlayer < followRadius)
+            else if (distanceToPlayer <= followRadius)
             {
-                aIDestinationSetter.target = player.transform;
+                agent.SetDestination(player.transform.position);
                 Attack();
             }
-          
         }
 
         private void Attack()
