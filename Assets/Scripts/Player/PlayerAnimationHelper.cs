@@ -7,6 +7,8 @@ namespace Assets.Scripts.Player
     {
 
         [SerializeField] private Weapon weapon;
+        [SerializeField] private PlayerMovement playerMovement;
+        [SerializeField] private float updateMoveSpeed;
 
         private Animator anim;
         private bool checkCombo;
@@ -14,6 +16,7 @@ namespace Assets.Scripts.Player
         private void Start()
         {
             anim = GetComponent<Animator>();
+            updateMoveSpeed = playerMovement.moveSpeed;
         }
 
         private void Update()
@@ -22,12 +25,15 @@ namespace Assets.Scripts.Player
             {
                 return;
             }
+        
 
             if (Input.GetMouseButtonDown(0))
             {
+                //playerMovement.moveSpeed = 0;
                 if (checkCombo)
                 {
-                    anim.SetTrigger("Attack2");
+                    anim.SetTrigger("Combo");
+                    print("combo");
                 }
                 else
                 {
@@ -48,19 +54,20 @@ namespace Assets.Scripts.Player
             isAttacking = false;
             weapon.AttackEnd();
             anim.ResetTrigger("Attack");
+            playerMovement.moveSpeed = updateMoveSpeed;
             print("end melee");
         }
 
         public void ComboStart()
         {
             checkCombo = true;
-            print("start combo");   
+            print(checkCombo);
         }
 
         public void ComboEnd()
         {
             checkCombo = false;
-            print("end combo");
+            print(checkCombo);
         }
     }
 
