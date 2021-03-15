@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 2787337462963762435}
   - component: {fileID: 2787337462963762434}
   - component: {fileID: 731186241}
+  - component: {fileID: 1982028996}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -117,8 +118,10 @@ MonoBehaviour:
   controller: {fileID: 2787337462963762435}
   anim: {fileID: 2882055982875497511}
   damageable: {fileID: 731186241}
+  levelSystem: {fileID: 1982028996}
   health: 100
   attackSpeed: 1
+  currentLvl: 0
 --- !u!114 &731186241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +134,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7330a6b59eda24799ac2ab61d425e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1982028996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2787337462963762433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a8e152c4a8a2148aa4fff02f272233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experience: 0
+  experienceToNextLevel: 100
+  playerLvl: 1
 --- !u!1 &2787337463534727841
 GameObject:
   m_ObjectHideFlags: 0

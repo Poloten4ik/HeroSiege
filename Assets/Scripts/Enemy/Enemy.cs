@@ -12,6 +12,7 @@ namespace Assets.Scripts.Enemy
     {
         [Header("Enemy Options")]
         [SerializeField] private int health = 100;
+        [SerializeField] private int exp = 20;
         [SerializeField] private float followRadius = 8f;
         [SerializeField] private float attackRadius = 2f;
         [SerializeField] private float moveSpeed = 3.5f;
@@ -20,15 +21,15 @@ namespace Assets.Scripts.Enemy
         [Header("References")]
         [SerializeField] private Transform castlePosition;
 
-
-
         private float distanceToPlayer;
         private float distanceToCaslte;
         private float nextAttack;
         Animator anim;
         Damageable damageable;
-        PlayerMovement player;
+        PlayerManager player;
         NavMeshAgent agent;
+        LevelSystem levelSystem;
+        Collider col;
 
         public EnemyState activeState;
 
@@ -44,11 +45,14 @@ namespace Assets.Scripts.Enemy
         private void Start()
         {
             anim = GetComponent<Animator>();
-            player = PlayerMovement.Instance;
+            levelSystem = LevelSystem.Instance;
+            player = PlayerManager.Instance;
             damageable = GetComponent<Damageable>();
             agent = GetComponent<NavMeshAgent>();
             agent.speed = moveSpeed;
             damageable.OnRecieveDamage += ReciveDamage;
+            col = GetComponent<Collider>();
+
             ChangeState(EnemyState.MOVE_TO_CASTLE);
         }
 
@@ -78,8 +82,6 @@ namespace Assets.Scripts.Enemy
 
                     break;
             }
-
-
         }
 
         public void ChangeState(EnemyState newState)
@@ -156,9 +158,10 @@ namespace Assets.Scripts.Enemy
         {
             health -= damage;
             anim.SetTrigger("GetHit");
-
             if (health <= 0)
             {
+                col.enabled = false;
+                levelSystem.AddExperience(exp);
                 anim.SetTrigger("Dead");
                 Destroy(gameObject, 1f);
             }

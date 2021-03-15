@@ -6,9 +6,9 @@ using UnityEngine;
 namespace Assets.Scripts.Player
 {
    
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerManager : MonoBehaviour
     {
-        public static PlayerMovement Instance { get; private set; }
+        public static PlayerManager Instance { get; private set; }
 
         [Header("Movement config")]
         public float moveSpeed = 10f;
@@ -23,10 +23,12 @@ namespace Assets.Scripts.Player
         [SerializeField] private CharacterController controller;
         [SerializeField] private Animator anim;
         [SerializeField] private Damageable damageable;
+        [SerializeField] private LevelSystem levelSystem;
 
         [Header("Player Options")]
         [SerializeField] private int health = 100;
         [SerializeField] private float attackSpeed = 1f;
+        [SerializeField] private int currentLvl = 1;
 
         private Camera mainCamera;
         private float gravity;
@@ -50,15 +52,11 @@ namespace Assets.Scripts.Player
             }
 
             Instance = this;
-            
-           
         }
 
         private void Update()
         {
             Move();
-            //attackSpeed += 0.001f;
-
             anim.SetFloat("AttackSpeed", attackSpeed);
         }
 
@@ -100,6 +98,17 @@ namespace Assets.Scripts.Player
         {
             health -= damage;
             print(health);
+        }
+
+        public void LevelUp(int lvl)
+        {
+            if (currentLvl < lvl)
+            {
+                attackSpeed += 0.2f;
+                health += health * 10 / 100;
+                currentLvl = lvl;
+            }
+          
         }
     }
 

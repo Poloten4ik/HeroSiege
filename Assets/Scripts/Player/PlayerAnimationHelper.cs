@@ -7,7 +7,7 @@ namespace Assets.Scripts.Player
     {
 
         [SerializeField] private Weapon weapon;
-        [SerializeField] private PlayerMovement playerMovement;
+        [SerializeField] private PlayerManager playerMovement;
         [SerializeField] private float updateMoveSpeed;
 
         private Animator anim;
@@ -29,7 +29,7 @@ namespace Assets.Scripts.Player
 
             if (Input.GetMouseButtonDown(0))
             {
-                //playerMovement.moveSpeed = 0;
+                playerMovement.moveSpeed = 0.5f;
                 if (checkCombo)
                 {
                     anim.SetTrigger("Combo");
@@ -61,12 +61,14 @@ namespace Assets.Scripts.Player
         public void ComboStart()
         {
             checkCombo = true;
+            playerMovement.moveSpeed = 0;
             print(checkCombo);
         }
 
         public void ComboEnd()
         {
             checkCombo = false;
+            playerMovement.moveSpeed = updateMoveSpeed;
             print(checkCombo);
         }
     }

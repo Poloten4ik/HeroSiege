@@ -2466,6 +2466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
+  exp: 100
   followRadius: 15
   attackRadius: 3
   moveSpeed: 3.5
