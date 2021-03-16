@@ -36,8 +36,9 @@ namespace Assets.Scripts.Enemy
         public enum EnemyState
         {
             MOVE_TO_CASTLE,
+            ATTACK_CASTLE,
             MOVE_TO_PLAYER,
-            ATTACK,
+            ATTACK_PLAYER,
             SPELL_CAST,
             DEATH
         }
@@ -63,17 +64,22 @@ namespace Assets.Scripts.Enemy
             distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             distanceToCaslte = Vector3.Distance(transform.position, castlePosition.transform.position);
 
+            print(distanceToCaslte);
+
             switch (activeState)
             {
                 case EnemyState.MOVE_TO_CASTLE:
                     MoveToCastle();
                     break;
+                case EnemyState.ATTACK_CASTLE:
+                    AttackCastle();
+                    break;
                 case EnemyState.MOVE_TO_PLAYER:
                     MoveToPlayer();
                     break;
-                case EnemyState.ATTACK:
-                    Attack();
-                    break;
+                case EnemyState.ATTACK_PLAYER:
+                    AttackPlayer();
+                    break; 
 
                 case EnemyState.SPELL_CAST:
 
@@ -96,7 +102,7 @@ namespace Assets.Scripts.Enemy
 
                     break;
 
-                case EnemyState.ATTACK:
+                case EnemyState.ATTACK_PLAYER:
                   
                     break;
 
@@ -117,6 +123,11 @@ namespace Assets.Scripts.Enemy
             {
                 ChangeState(EnemyState.MOVE_TO_PLAYER);
             }
+
+            else if (distanceToCaslte < attackRadius)
+            {
+                ChangeState(EnemyState.ATTACK_CASTLE);
+            }
         }
 
 
@@ -132,11 +143,31 @@ namespace Assets.Scripts.Enemy
             }
             else if (distanceToPlayer < attackRadius)
             {
-                ChangeState(EnemyState.ATTACK);
+                ChangeState(EnemyState.ATTACK_PLAYER);
             }
+           
         }
 
-        private void Attack()
+        private void AttackCastle()
+        {
+            anim.SetBool("Attacking", true);
+            agent.speed = default;
+
+            nextAttack -= Time.deltaTime;
+            if (nextAttack <= 0)
+            {
+                nextAttack = attackSpeed;
+                anim.SetTrigger("Attack");
+            }
+
+            if (distanceToPlayer <= followRadius)
+            {
+                ChangeState(EnemyState.MOVE_TO_PLAYER);
+            }
+
+        }
+
+        private void AttackPlayer()
         {
             anim.SetBool("Attacking", true);          
             agent.speed = default;
@@ -147,7 +178,6 @@ namespace Assets.Scripts.Enemy
                 nextAttack = attackSpeed;
                 anim.SetTrigger("Attack");
             }
-
             if (distanceToPlayer > attackRadius)
             {
                 ChangeState(EnemyState.MOVE_TO_PLAYER);

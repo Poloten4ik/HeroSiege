@@ -345,7 +345,9 @@ GameObject:
   - component: {fileID: 4000010482984542}
   - component: {fileID: 33000011863400796}
   - component: {fileID: 23000014121516546}
-  m_Layer: 0
+  - component: {fileID: 4288203500547701806}
+  - component: {fileID: 6402366259208893710}
+  m_Layer: 12
   m_Name: Weapon_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,6 +415,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4288203500547701806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010345008162}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.39, z: 3.59}
+  m_Center: {x: 0, y: 0, z: 0.31}
+--- !u!114 &6402366259208893710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010345008162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71b297230a18a042b88a961deb0c0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
 --- !u!1 &1000010424270928
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,9 +883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000011809136752}
-  - component: {fileID: 6121429348108461582}
-  - component: {fileID: 3560677898199014175}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -879,32 +905,6 @@ Transform:
   m_Father: {fileID: 4000011554080102}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6121429348108461582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000010764895746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c71b297230a18a042b88a961deb0c0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 30
---- !u!65 &3560677898199014175
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000010764895746}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.86, z: 0.28}
-  m_Center: {x: 0, y: 0.52, z: 0}
 --- !u!1 &1000010848213768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,7 +2551,7 @@ GameObject:
   - component: {fileID: 7316783070043173189}
   - component: {fileID: -1880631363283994404}
   - component: {fileID: -6773648204710237244}
-  - component: {fileID: -7271929912439953409}
+  - component: {fileID: 2497850156385115853}
   m_Layer: 11
   m_Name: Troll
   m_TagString: Untagged
@@ -2622,10 +2622,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949f998d1c2e5b47a63201146ef1a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 120
+  exp: 30
   followRadius: 15
   attackRadius: 3
-  moveSpeed: 2
+  moveSpeed: 4
   attackSpeed: 3
   castlePosition: {fileID: 2527362591398672167, guid: 4399966425360324188d7de0959709f7,
     type: 3}
@@ -2694,7 +2695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b270f3f6d83bb42be51964698fbbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7271929912439953409
+--- !u!114 &2497850156385115853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2706,7 +2707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19908260fdf90045a63eaa14c41b99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 6121429348108461582}
+  weapon: {fileID: 6402366259208893710}
 --- !u!1 &1000012454212212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3357,7 +3358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000011450649420}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone_weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -31,11 +31,6 @@ namespace Assets.Scripts.Player
             playerManager = PlayerManager.Instance;
         }
 
-        private void Update()
-        {
-            print(experience);
-            print(playerLvl);
-        }
         public void AddExperience(int amount)
         {
             experience += amount;

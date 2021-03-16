@@ -2466,14 +2466,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
-  exp: 100
+  exp: 10
   followRadius: 15
-  attackRadius: 3
-  moveSpeed: 3.5
+  attackRadius: 4
+  moveSpeed: 10
   attackSpeed: 2
-  castlePosition: {fileID: 2527362591398672167, guid: 4399966425360324188d7de0959709f7,
+  castlePosition: {fileID: 1982329378273587965, guid: 0b7b52ce346d7a947a5779c8f94f15ba,
     type: 3}
-  activeState: 0
+  activeState: 2
 --- !u!114 &4849780998216164850
 MonoBehaviour:
   m_ObjectHideFlags: 0

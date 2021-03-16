@@ -200,9 +200,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
+  exp: 20
   followRadius: 15
   attackRadius: 2
-  moveSpeed: 5
+  moveSpeed: 4
   attackSpeed: 1
   castlePosition: {fileID: 2527362591398672167, guid: 4399966425360324188d7de0959709f7,
     type: 3}

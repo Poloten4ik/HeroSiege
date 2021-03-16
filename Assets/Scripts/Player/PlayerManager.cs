@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Enemy;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Assets.Scripts.Player
     public class PlayerManager : MonoBehaviour
     {
         public static PlayerManager Instance { get; private set; }
+        public Action OnHealthChange = delegate { };
 
         [Header("Movement config")]
         public float moveSpeed = 10f;
@@ -26,9 +28,9 @@ namespace Assets.Scripts.Player
         [SerializeField] private LevelSystem levelSystem;
 
         [Header("Player Options")]
-        [SerializeField] private int health = 100;
         [SerializeField] private float attackSpeed = 1f;
         [SerializeField] private int currentLvl = 1;
+        public int health = 100;
 
         private Camera mainCamera;
         private float gravity;
@@ -97,6 +99,7 @@ namespace Assets.Scripts.Player
         private void ReciveDamage(int damage)
         {
             health -= damage;
+            OnHealthChange();
             print(health);
         }
 
@@ -104,8 +107,7 @@ namespace Assets.Scripts.Player
         {
             if (currentLvl < lvl)
             {
-                attackSpeed += 0.2f;
-                health += health * 10 / 100;
+                attackSpeed += 0.1f;
                 currentLvl = lvl;
             }
           
