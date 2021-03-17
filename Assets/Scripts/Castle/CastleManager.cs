@@ -12,9 +12,9 @@ namespace Assets.Scripts.Castle
 
         private void Start()
         {
-            damageable.OnRecieveDamage += ReciveDamage;
+            damageable.OnReceiveDamage += ReceiveDamage;
         }
-        private void ReciveDamage(int damage)
+        private void ReceiveDamage(int damage)
         {
             health -= damage;
 

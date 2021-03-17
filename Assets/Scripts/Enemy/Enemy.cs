@@ -10,9 +10,11 @@ namespace Assets.Scripts.Enemy
 
     public class Enemy : MonoBehaviour
     {
+
         [Header("Enemy Options")]
         [SerializeField] private int health = 100;
         [SerializeField] private int exp = 20;
+        [SerializeField] private int reward = 3;
         [SerializeField] private float followRadius = 8f;
         [SerializeField] private float attackRadius = 2f;
         [SerializeField] private float moveSpeed = 3.5f;
@@ -51,7 +53,7 @@ namespace Assets.Scripts.Enemy
             damageable = GetComponent<Damageable>();
             agent = GetComponent<NavMeshAgent>();
             agent.speed = moveSpeed;
-            damageable.OnRecieveDamage += ReciveDamage;
+            damageable.OnReceiveDamage += ReciveDamage;
             col = GetComponent<Collider>();
 
             ChangeState(EnemyState.MOVE_TO_CASTLE);
@@ -63,8 +65,6 @@ namespace Assets.Scripts.Enemy
 
             distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             distanceToCaslte = Vector3.Distance(transform.position, castlePosition.transform.position);
-
-            print(distanceToCaslte);
 
             switch (activeState)
             {
@@ -192,6 +192,7 @@ namespace Assets.Scripts.Enemy
             {
                 col.enabled = false;
                 levelSystem.AddExperience(exp);
+                player.AddGold(reward);
                 anim.SetTrigger("Dead");
                 Destroy(gameObject, 1f);
             }

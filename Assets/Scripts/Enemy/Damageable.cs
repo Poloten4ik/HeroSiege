@@ -6,10 +6,10 @@ namespace Assets.Scripts.Enemy
 {
     public class Damageable : MonoBehaviour
     {
-        public Action<int> OnRecieveDamage = delegate { };
+        public Action<int> OnReceiveDamage = delegate { }; 
         public void DoDamage(int damage)
         {
-            OnRecieveDamage(damage);
+            OnReceiveDamage(damage);
         }
     }
 }
