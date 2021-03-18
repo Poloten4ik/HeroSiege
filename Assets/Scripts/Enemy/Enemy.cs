@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Enums;
 using Assets.Scripts.Player;
 using Pathfinding;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,15 +12,16 @@ namespace Assets.Scripts.Enemy
 
     public class Enemy : MonoBehaviour
     {
+        public Action OnHealthChange = delegate { };
 
         [Header("Enemy Options")]
-        [SerializeField] private int health = 100;
         [SerializeField] private int exp = 20;
         [SerializeField] private int reward = 3;
         [SerializeField] private float followRadius = 8f;
         [SerializeField] private float attackRadius = 2f;
         [SerializeField] private float moveSpeed = 3.5f;
         [SerializeField] private float attackSpeed = 1f;
+        public int health = 100;
 
         [Header("References")]
         [SerializeField] private Transform castlePosition;
@@ -49,6 +51,7 @@ namespace Assets.Scripts.Enemy
 
             ChangeState(EnemyState.MOVE_TO_CASTLE);
         }
+
 
         private void Update()
         {
@@ -179,6 +182,7 @@ namespace Assets.Scripts.Enemy
         {
             health -= damage;
             anim.SetTrigger("GetHit");
+            OnHealthChange();
             if (health <= 0)
             {
                 col.enabled = false;
