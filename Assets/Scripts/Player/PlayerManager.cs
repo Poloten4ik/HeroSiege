@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
-   
+
     public class PlayerManager : MonoBehaviour
     {
         public static PlayerManager Instance { get; private set; }
@@ -35,9 +35,9 @@ namespace Assets.Scripts.Player
 
         [Header("Player Health")]
         public int maxHealth = 100;
-        public int currentHealth ;
+        public int currentHealth;
         public int healthRegeneration = 1;
-        public bool isHealingOn ;
+        public bool isHealingOn;
 
         private Camera mainCamera;
         private float gravity;
@@ -51,6 +51,8 @@ namespace Assets.Scripts.Player
             mainCamera = Camera.main;
             damageable.OnReceiveDamage += ReceiveDamage;
             currentHealth = maxHealth;
+
+            StartCoroutine(HealthRegeneration());
         }
 
         private void Awake()
@@ -108,12 +110,6 @@ namespace Assets.Scripts.Player
         {
             currentHealth -= damage;
             OnHealthChange();
-
-            if (!isHealingOn)
-            {
-                StartCoroutine(HealthRegeneration());
-                isHealingOn = true;
-            }
         }
 
         public void LevelUp(int lvl)
@@ -133,18 +129,14 @@ namespace Assets.Scripts.Player
 
         public IEnumerator HealthRegeneration()
         {
-            while (currentHealth < maxHealth)
+            while (true)
             {
-                yield return new WaitForSeconds(1);
-                currentHealth += healthRegeneration;
+                yield return new WaitForSecondsRealtime(1);
+                if (currentHealth > maxHealth)
+                    continue;
+
+                currentHealth = currentHealth + healthRegeneration > maxHealth ? maxHealth : currentHealth + healthRegeneration;
                 OnHealthChange();
-                if (currentHealth >= maxHealth)
-                {
-                    currentHealth = maxHealth;
-                    StopCoroutine(HealthRegeneration());
-                    isHealingOn = false;
-                    OnHealthChange();
-                }
             }
         }
     }

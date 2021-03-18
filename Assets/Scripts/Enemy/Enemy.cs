@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Player;
+﻿using Assets.Scripts.Enums;
+using Assets.Scripts.Player;
 using Pathfinding;
 using System.Collections;
 using UnityEngine;
@@ -34,16 +35,6 @@ namespace Assets.Scripts.Enemy
         Collider col;
 
         public EnemyState activeState;
-
-        public enum EnemyState
-        {
-            MOVE_TO_CASTLE,
-            ATTACK_CASTLE,
-            MOVE_TO_PLAYER,
-            ATTACK_PLAYER,
-            SPELL_CAST,
-            DEATH
-        }
 
         private void Start()
         {
