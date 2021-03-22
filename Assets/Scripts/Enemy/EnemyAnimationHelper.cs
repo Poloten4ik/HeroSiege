@@ -8,6 +8,7 @@ namespace Assets.Scripts.Enemy
     public class EnemyAnimationHelper : MonoBehaviour
     {
         [SerializeField] private Weapon weapon;
+        [SerializeField] private Weapon weapon2;
         private Animator anim;
         void Start()
         {

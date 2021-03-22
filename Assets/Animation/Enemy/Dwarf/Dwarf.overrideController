@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dwarf
+  m_Controller: {fileID: 9100000, guid: b52f442eddcd64b46bd3260993823c18, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: eb6dcc308b2dd7c45ab0c91ebba4a400, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: a87d32f035d12db4e83f0328dc6e66bf, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 856af63ec2eb7d74db8b6f97c07b600c, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 7fb83201f863d8c4e8dede14b9b4c182, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: f988901b415e4d540ab2b8a76b8187bb, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 6f37f58ba1e8d694bb6880564874a242, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: ec09e6b2b112f944db1675019622fec9, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 26b8f27c7df39f847ac93cf8136fafe8, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 9d22552bf54abb84a8f32d33645f8c07, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: c1589da34a9a13345bef943c338a7254, type: 3}

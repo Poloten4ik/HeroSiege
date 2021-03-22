@@ -1,214 +1,623 @@
 fileFormatVersion: 2
 guid: 971853bae1ff49049923dc4be79bcb08
-timeCreated: 1491796667
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: ' Bone_Axe'
-    100002: CATRigHub001
-    100004: CATRigHub001Bone001
-    100006: CATRigHub001Bone001Bone001
-    100008: CATRigHub001Bone001Bone001 1
-    100010: CATRigHub001Bone002
-    100012: CATRigHub001Bone003
-    100014: CATRigHub002
-    100016: CATRigHub002Bone001
-    100018: CATRigHub002Bone001Bone001
-    100020: CATRigHub002Bone001Bone002
-    100022: CATRigHub002Bone002
-    100024: CATRigHub002Bone003
-    100026: CATRigLArm1
-    100028: CATRigLArm2
-    100030: CATRigLArmCollarbone
-    100032: CATRigLArmDigit11
-    100034: CATRigLArmDigit12
-    100036: CATRigLArmDigit13
-    100038: CATRigLArmDigit21
-    100040: CATRigLArmDigit22
-    100042: CATRigLArmDigit23
-    100044: CATRigLArmDigit31
-    100046: CATRigLArmDigit32
-    100048: CATRigLArmDigit33
-    100050: CATRigLArmDigit41
-    100052: CATRigLArmDigit42
-    100054: CATRigLArmDigit43
-    100056: CATRigLArmDigit51
-    100058: CATRigLArmDigit52
-    100060: CATRigLArmDigit53
-    100062: CATRigLArmIKTarget
-    100064: CATRigLArmPalm
-    100066: CATRigLLeg1
-    100068: CATRigLLeg2
-    100070: CATRigLLegAnkle
-    100072: CATRigLLegDigit11
-    100074: CATRigLLegPlatform
-    100076: CATRigRArm1
-    100078: CATRigRArm2
-    100080: CATRigRArmCollarbone
-    100082: CATRigRArmDigit11
-    100084: CATRigRArmDigit12
-    100086: CATRigRArmDigit13
-    100088: CATRigRArmDigit21
-    100090: CATRigRArmDigit22
-    100092: CATRigRArmDigit23
-    100094: CATRigRArmDigit31
-    100096: CATRigRArmDigit32
-    100098: CATRigRArmDigit33
-    100100: CATRigRArmDigit41
-    100102: CATRigRArmDigit42
-    100104: CATRigRArmDigit43
-    100106: CATRigRArmDigit51
-    100108: CATRigRArmDigit52
-    100110: CATRigRArmDigit53
-    100112: CATRigRArmIKTarget
-    100114: CATRigRArmPalm
-    100116: CATRigRLeg1
-    100118: CATRigRLeg2
-    100120: CATRigRLegAnkle
-    100122: CATRigRLegDigit11
-    100124: CATRigRLegPlatform
-    100126: CATRigSpine1
-    100128: CATRigSpine2
-    100130: Character001
-    100132: //RootNode
-    100134: Knight_armor_belt
-    100136: Knight_belts
-    100138: Knight_body
-    100140: Knight_eyes
-    100142: Knight_group
-    100144: Knight_scapularL
-    100146: Knight_scapularR
-    100148: Knight_weapon
-    400000: ' Bone_Axe'
-    400002: CATRigHub001
-    400004: CATRigHub001Bone001
-    400006: CATRigHub001Bone001Bone001
-    400008: CATRigHub001Bone001Bone001 1
-    400010: CATRigHub001Bone002
-    400012: CATRigHub001Bone003
-    400014: CATRigHub002
-    400016: CATRigHub002Bone001
-    400018: CATRigHub002Bone001Bone001
-    400020: CATRigHub002Bone001Bone002
-    400022: CATRigHub002Bone002
-    400024: CATRigHub002Bone003
-    400026: CATRigLArm1
-    400028: CATRigLArm2
-    400030: CATRigLArmCollarbone
-    400032: CATRigLArmDigit11
-    400034: CATRigLArmDigit12
-    400036: CATRigLArmDigit13
-    400038: CATRigLArmDigit21
-    400040: CATRigLArmDigit22
-    400042: CATRigLArmDigit23
-    400044: CATRigLArmDigit31
-    400046: CATRigLArmDigit32
-    400048: CATRigLArmDigit33
-    400050: CATRigLArmDigit41
-    400052: CATRigLArmDigit42
-    400054: CATRigLArmDigit43
-    400056: CATRigLArmDigit51
-    400058: CATRigLArmDigit52
-    400060: CATRigLArmDigit53
-    400062: CATRigLArmIKTarget
-    400064: CATRigLArmPalm
-    400066: CATRigLLeg1
-    400068: CATRigLLeg2
-    400070: CATRigLLegAnkle
-    400072: CATRigLLegDigit11
-    400074: CATRigLLegPlatform
-    400076: CATRigRArm1
-    400078: CATRigRArm2
-    400080: CATRigRArmCollarbone
-    400082: CATRigRArmDigit11
-    400084: CATRigRArmDigit12
-    400086: CATRigRArmDigit13
-    400088: CATRigRArmDigit21
-    400090: CATRigRArmDigit22
-    400092: CATRigRArmDigit23
-    400094: CATRigRArmDigit31
-    400096: CATRigRArmDigit32
-    400098: CATRigRArmDigit33
-    400100: CATRigRArmDigit41
-    400102: CATRigRArmDigit42
-    400104: CATRigRArmDigit43
-    400106: CATRigRArmDigit51
-    400108: CATRigRArmDigit52
-    400110: CATRigRArmDigit53
-    400112: CATRigRArmIKTarget
-    400114: CATRigRArmPalm
-    400116: CATRigRLeg1
-    400118: CATRigRLeg2
-    400120: CATRigRLegAnkle
-    400122: CATRigRLegDigit11
-    400124: CATRigRLegPlatform
-    400126: CATRigSpine1
-    400128: CATRigSpine2
-    400130: Character001
-    400132: //RootNode
-    400134: Knight_armor_belt
-    400136: Knight_belts
-    400138: Knight_body
-    400140: Knight_eyes
-    400142: Knight_group
-    400144: Knight_scapularL
-    400146: Knight_scapularR
-    400148: Knight_weapon
-    2300000: Knight_eyes
-    2300002: Knight_scapularL
-    2300004: Knight_scapularR
-    2300006: Knight_weapon
-    3300000: Knight_eyes
-    3300002: Knight_scapularL
-    3300004: Knight_scapularR
-    3300006: Knight_weapon
-    4300000: Knight_weapon
-    4300002: Knight_armor_belt
-    4300004: Knight_belts
-    4300006: Knight_body
-    4300008: Knight_eyes
-    4300010: Knight_scapularL
-    4300012: Knight_scapularR
-    7400000: Take 001
-    9500000: //RootNode
-    13700000: Knight_armor_belt
-    13700002: Knight_belts
-    13700004: Knight_body
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: ' Bone_Axe'
+  - first:
+      1: 100002
+    second: CATRigHub001
+  - first:
+      1: 100004
+    second: CATRigHub001Bone001
+  - first:
+      1: 100006
+    second: CATRigHub001Bone001Bone001
+  - first:
+      1: 100008
+    second: CATRigHub001Bone001Bone001 1
+  - first:
+      1: 100010
+    second: CATRigHub001Bone002
+  - first:
+      1: 100012
+    second: CATRigHub001Bone003
+  - first:
+      1: 100014
+    second: CATRigHub002
+  - first:
+      1: 100016
+    second: CATRigHub002Bone001
+  - first:
+      1: 100018
+    second: CATRigHub002Bone001Bone001
+  - first:
+      1: 100020
+    second: CATRigHub002Bone001Bone002
+  - first:
+      1: 100022
+    second: CATRigHub002Bone002
+  - first:
+      1: 100024
+    second: CATRigHub002Bone003
+  - first:
+      1: 100026
+    second: CATRigLArm1
+  - first:
+      1: 100028
+    second: CATRigLArm2
+  - first:
+      1: 100030
+    second: CATRigLArmCollarbone
+  - first:
+      1: 100032
+    second: CATRigLArmDigit11
+  - first:
+      1: 100034
+    second: CATRigLArmDigit12
+  - first:
+      1: 100036
+    second: CATRigLArmDigit13
+  - first:
+      1: 100038
+    second: CATRigLArmDigit21
+  - first:
+      1: 100040
+    second: CATRigLArmDigit22
+  - first:
+      1: 100042
+    second: CATRigLArmDigit23
+  - first:
+      1: 100044
+    second: CATRigLArmDigit31
+  - first:
+      1: 100046
+    second: CATRigLArmDigit32
+  - first:
+      1: 100048
+    second: CATRigLArmDigit33
+  - first:
+      1: 100050
+    second: CATRigLArmDigit41
+  - first:
+      1: 100052
+    second: CATRigLArmDigit42
+  - first:
+      1: 100054
+    second: CATRigLArmDigit43
+  - first:
+      1: 100056
+    second: CATRigLArmDigit51
+  - first:
+      1: 100058
+    second: CATRigLArmDigit52
+  - first:
+      1: 100060
+    second: CATRigLArmDigit53
+  - first:
+      1: 100062
+    second: CATRigLArmIKTarget
+  - first:
+      1: 100064
+    second: CATRigLArmPalm
+  - first:
+      1: 100066
+    second: CATRigLLeg1
+  - first:
+      1: 100068
+    second: CATRigLLeg2
+  - first:
+      1: 100070
+    second: CATRigLLegAnkle
+  - first:
+      1: 100072
+    second: CATRigLLegDigit11
+  - first:
+      1: 100074
+    second: CATRigLLegPlatform
+  - first:
+      1: 100076
+    second: CATRigRArm1
+  - first:
+      1: 100078
+    second: CATRigRArm2
+  - first:
+      1: 100080
+    second: CATRigRArmCollarbone
+  - first:
+      1: 100082
+    second: CATRigRArmDigit11
+  - first:
+      1: 100084
+    second: CATRigRArmDigit12
+  - first:
+      1: 100086
+    second: CATRigRArmDigit13
+  - first:
+      1: 100088
+    second: CATRigRArmDigit21
+  - first:
+      1: 100090
+    second: CATRigRArmDigit22
+  - first:
+      1: 100092
+    second: CATRigRArmDigit23
+  - first:
+      1: 100094
+    second: CATRigRArmDigit31
+  - first:
+      1: 100096
+    second: CATRigRArmDigit32
+  - first:
+      1: 100098
+    second: CATRigRArmDigit33
+  - first:
+      1: 100100
+    second: CATRigRArmDigit41
+  - first:
+      1: 100102
+    second: CATRigRArmDigit42
+  - first:
+      1: 100104
+    second: CATRigRArmDigit43
+  - first:
+      1: 100106
+    second: CATRigRArmDigit51
+  - first:
+      1: 100108
+    second: CATRigRArmDigit52
+  - first:
+      1: 100110
+    second: CATRigRArmDigit53
+  - first:
+      1: 100112
+    second: CATRigRArmIKTarget
+  - first:
+      1: 100114
+    second: CATRigRArmPalm
+  - first:
+      1: 100116
+    second: CATRigRLeg1
+  - first:
+      1: 100118
+    second: CATRigRLeg2
+  - first:
+      1: 100120
+    second: CATRigRLegAnkle
+  - first:
+      1: 100122
+    second: CATRigRLegDigit11
+  - first:
+      1: 100124
+    second: CATRigRLegPlatform
+  - first:
+      1: 100126
+    second: CATRigSpine1
+  - first:
+      1: 100128
+    second: CATRigSpine2
+  - first:
+      1: 100130
+    second: Character001
+  - first:
+      1: 100132
+    second: //RootNode
+  - first:
+      1: 100134
+    second: Knight_armor_belt
+  - first:
+      1: 100136
+    second: Knight_belts
+  - first:
+      1: 100138
+    second: Knight_body
+  - first:
+      1: 100140
+    second: Knight_eyes
+  - first:
+      1: 100142
+    second: Knight_group
+  - first:
+      1: 100144
+    second: Knight_scapularL
+  - first:
+      1: 100146
+    second: Knight_scapularR
+  - first:
+      1: 100148
+    second: Knight_weapon
+  - first:
+      4: 400000
+    second: ' Bone_Axe'
+  - first:
+      4: 400002
+    second: CATRigHub001
+  - first:
+      4: 400004
+    second: CATRigHub001Bone001
+  - first:
+      4: 400006
+    second: CATRigHub001Bone001Bone001
+  - first:
+      4: 400008
+    second: CATRigHub001Bone001Bone001 1
+  - first:
+      4: 400010
+    second: CATRigHub001Bone002
+  - first:
+      4: 400012
+    second: CATRigHub001Bone003
+  - first:
+      4: 400014
+    second: CATRigHub002
+  - first:
+      4: 400016
+    second: CATRigHub002Bone001
+  - first:
+      4: 400018
+    second: CATRigHub002Bone001Bone001
+  - first:
+      4: 400020
+    second: CATRigHub002Bone001Bone002
+  - first:
+      4: 400022
+    second: CATRigHub002Bone002
+  - first:
+      4: 400024
+    second: CATRigHub002Bone003
+  - first:
+      4: 400026
+    second: CATRigLArm1
+  - first:
+      4: 400028
+    second: CATRigLArm2
+  - first:
+      4: 400030
+    second: CATRigLArmCollarbone
+  - first:
+      4: 400032
+    second: CATRigLArmDigit11
+  - first:
+      4: 400034
+    second: CATRigLArmDigit12
+  - first:
+      4: 400036
+    second: CATRigLArmDigit13
+  - first:
+      4: 400038
+    second: CATRigLArmDigit21
+  - first:
+      4: 400040
+    second: CATRigLArmDigit22
+  - first:
+      4: 400042
+    second: CATRigLArmDigit23
+  - first:
+      4: 400044
+    second: CATRigLArmDigit31
+  - first:
+      4: 400046
+    second: CATRigLArmDigit32
+  - first:
+      4: 400048
+    second: CATRigLArmDigit33
+  - first:
+      4: 400050
+    second: CATRigLArmDigit41
+  - first:
+      4: 400052
+    second: CATRigLArmDigit42
+  - first:
+      4: 400054
+    second: CATRigLArmDigit43
+  - first:
+      4: 400056
+    second: CATRigLArmDigit51
+  - first:
+      4: 400058
+    second: CATRigLArmDigit52
+  - first:
+      4: 400060
+    second: CATRigLArmDigit53
+  - first:
+      4: 400062
+    second: CATRigLArmIKTarget
+  - first:
+      4: 400064
+    second: CATRigLArmPalm
+  - first:
+      4: 400066
+    second: CATRigLLeg1
+  - first:
+      4: 400068
+    second: CATRigLLeg2
+  - first:
+      4: 400070
+    second: CATRigLLegAnkle
+  - first:
+      4: 400072
+    second: CATRigLLegDigit11
+  - first:
+      4: 400074
+    second: CATRigLLegPlatform
+  - first:
+      4: 400076
+    second: CATRigRArm1
+  - first:
+      4: 400078
+    second: CATRigRArm2
+  - first:
+      4: 400080
+    second: CATRigRArmCollarbone
+  - first:
+      4: 400082
+    second: CATRigRArmDigit11
+  - first:
+      4: 400084
+    second: CATRigRArmDigit12
+  - first:
+      4: 400086
+    second: CATRigRArmDigit13
+  - first:
+      4: 400088
+    second: CATRigRArmDigit21
+  - first:
+      4: 400090
+    second: CATRigRArmDigit22
+  - first:
+      4: 400092
+    second: CATRigRArmDigit23
+  - first:
+      4: 400094
+    second: CATRigRArmDigit31
+  - first:
+      4: 400096
+    second: CATRigRArmDigit32
+  - first:
+      4: 400098
+    second: CATRigRArmDigit33
+  - first:
+      4: 400100
+    second: CATRigRArmDigit41
+  - first:
+      4: 400102
+    second: CATRigRArmDigit42
+  - first:
+      4: 400104
+    second: CATRigRArmDigit43
+  - first:
+      4: 400106
+    second: CATRigRArmDigit51
+  - first:
+      4: 400108
+    second: CATRigRArmDigit52
+  - first:
+      4: 400110
+    second: CATRigRArmDigit53
+  - first:
+      4: 400112
+    second: CATRigRArmIKTarget
+  - first:
+      4: 400114
+    second: CATRigRArmPalm
+  - first:
+      4: 400116
+    second: CATRigRLeg1
+  - first:
+      4: 400118
+    second: CATRigRLeg2
+  - first:
+      4: 400120
+    second: CATRigRLegAnkle
+  - first:
+      4: 400122
+    second: CATRigRLegDigit11
+  - first:
+      4: 400124
+    second: CATRigRLegPlatform
+  - first:
+      4: 400126
+    second: CATRigSpine1
+  - first:
+      4: 400128
+    second: CATRigSpine2
+  - first:
+      4: 400130
+    second: Character001
+  - first:
+      4: 400132
+    second: //RootNode
+  - first:
+      4: 400134
+    second: Knight_armor_belt
+  - first:
+      4: 400136
+    second: Knight_belts
+  - first:
+      4: 400138
+    second: Knight_body
+  - first:
+      4: 400140
+    second: Knight_eyes
+  - first:
+      4: 400142
+    second: Knight_group
+  - first:
+      4: 400144
+    second: Knight_scapularL
+  - first:
+      4: 400146
+    second: Knight_scapularR
+  - first:
+      4: 400148
+    second: Knight_weapon
+  - first:
+      23: 2300000
+    second: Knight_eyes
+  - first:
+      23: 2300002
+    second: Knight_scapularL
+  - first:
+      23: 2300004
+    second: Knight_scapularR
+  - first:
+      23: 2300006
+    second: Knight_weapon
+  - first:
+      33: 3300000
+    second: Knight_eyes
+  - first:
+      33: 3300002
+    second: Knight_scapularL
+  - first:
+      33: 3300004
+    second: Knight_scapularR
+  - first:
+      33: 3300006
+    second: Knight_weapon
+  - first:
+      43: 4300000
+    second: Knight_weapon
+  - first:
+      43: 4300002
+    second: Knight_armor_belt
+  - first:
+      43: 4300004
+    second: Knight_belts
+  - first:
+      43: 4300006
+    second: Knight_body
+  - first:
+      43: 4300008
+    second: Knight_eyes
+  - first:
+      43: 4300010
+    second: Knight_scapularL
+  - first:
+      43: 4300012
+    second: Knight_scapularR
+  - first:
+      74: 7400000
+    second: Attack(1)
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Knight_armor_belt
+  - first:
+      137: 13700002
+    second: Knight_belts
+  - first:
+      137: 13700004
+    second: Knight_body
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 07 - Default
+    second: {fileID: 2100000, guid: b36bb888165cb1f4cac1d1283b917849, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 08 - Default
+    second: {fileID: 2100000, guid: a2f4c561a8b0c914b848b6521a063480, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Attack(1)
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.22247191
+        functionName: MeleeAttackStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4022472
+        functionName: MeleeAttackEnd
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -218,9 +627,14 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -230,11 +644,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
