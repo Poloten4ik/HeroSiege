@@ -710,6 +710,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.6641249
+        functionName: Attack2Start
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.7247851
         functionName: MeleeAttackEnd
         data: 
@@ -717,15 +724,8 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.73963135
-        functionName: ComboStart
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 1
-        functionName: ComboEnd
+      - time: 0.9611111
+        functionName: Attack2End
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

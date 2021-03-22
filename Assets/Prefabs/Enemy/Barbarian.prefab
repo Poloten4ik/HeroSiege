@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 23000012162851118}
   - component: {fileID: 572267751717409579}
   - component: {fileID: 6792890415070906536}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 23000011928025498}
   - component: {fileID: 7710926423244841530}
   - component: {fileID: 6542784548999771077}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mace
   m_TagString: Untagged
   m_Icon: {fileID: 0}

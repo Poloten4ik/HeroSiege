@@ -29,8 +29,6 @@ namespace Assets.Scripts.Enemy
                 Instantiate(enemyPrefabs[wave], transform.position, transform.rotation);
                 countOfEnemies += 1;
 
-                print(countOfEnemies);
-
                 if (numberOfEnemies == countOfEnemies)
                 {
                     countOfEnemies = 0;

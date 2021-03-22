@@ -18,14 +18,14 @@ namespace Assets.Scripts.Enemy
         public void MeleeAttackStart()
         {
             weapon.AttackStart();
-            print("attack start");
+           // print("attack start");
         }
 
         public void MeleeAttackEnd()
         {
             weapon.AttackEnd();
             anim.ResetTrigger("Attack");
-            print("attack end");
+          //  print("attack end");
         }
     }
 

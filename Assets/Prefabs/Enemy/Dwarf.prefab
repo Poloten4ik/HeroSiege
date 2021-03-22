@@ -2181,7 +2181,7 @@ GameObject:
   - component: {fileID: 5531118271667132237}
   - component: {fileID: 4973375481297457097}
   - component: {fileID: 7020104210632433508}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Dwarf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2510,7 +2510,7 @@ GameObject:
   - component: {fileID: 137000013240949568}
   - component: {fileID: 8441711692390477564}
   - component: {fileID: 8437620900875679651}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Low_Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -3427,9 +3427,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 1000012401438022, guid: b0f9a2fadab0e4e458d5c4b4ef736c0c, type: 3}
-  spawnDuration: 1
+  spawnDuration: 0.2
   nextWaveDelay: 7
-  numberOfEnemies: 1
+  numberOfEnemies: 100
 --- !u!1 &1656262353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3632,6 +3632,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213552013, guid: 41fd9719f2bcac2429188d8e78164e20, type: 3}
+      propertyPath: damage
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283157096, guid: 41fd9719f2bcac2429188d8e78164e20, type: 3}
+      propertyPath: slamDamage
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283157096, guid: 41fd9719f2bcac2429188d8e78164e20, type: 3}
+      propertyPath: comboRadius
+      value: 14.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283157096, guid: 41fd9719f2bcac2429188d8e78164e20, type: 3}
+      propertyPath: damageLayer.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 1982028996, guid: 41fd9719f2bcac2429188d8e78164e20, type: 3}
       propertyPath: playerLvl
       value: 10

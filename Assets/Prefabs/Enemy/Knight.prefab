@@ -730,6 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 470584331361178448}
+  weapon2: {fileID: 0}
 --- !u!54 &7327196527261231421
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1695,7 +1696,7 @@ GameObject:
   - component: {fileID: 23000010967529704}
   - component: {fileID: 470584331361178448}
   - component: {fileID: 431483524594355164}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Knight_weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

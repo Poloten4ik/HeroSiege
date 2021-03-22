@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Enemy;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Player
@@ -9,10 +10,15 @@ namespace Assets.Scripts.Player
         [SerializeField] private Weapon weapon;
         [SerializeField] private PlayerManager playerMovement;
         [SerializeField] private float updateMoveSpeed;
+        [SerializeField] private LayerMask damageLayer;
+        [SerializeField] private float comboRadius;
+        [SerializeField] private int slamDamage;
 
         private Animator anim;
         private bool checkCombo;
+        private bool attack2;
         private bool isAttacking;
+
         private void Start()
         {
             anim = GetComponent<Animator>();
@@ -33,7 +39,11 @@ namespace Assets.Scripts.Player
                 if (checkCombo)
                 {
                     anim.SetTrigger("Combo");
-                    print("combo");
+
+                }
+                else if (attack2)
+                {
+                    anim.SetTrigger("Attack2");
                 }
                 else
                 {
@@ -46,7 +56,7 @@ namespace Assets.Scripts.Player
         {
             isAttacking = true;
             weapon.AttackStart();
-            print("start melee");
+         //  print("start melee");
         }
 
         public void MeleeAttackEnd()
@@ -55,21 +65,57 @@ namespace Assets.Scripts.Player
             weapon.AttackEnd();
             anim.ResetTrigger("Attack");
             playerMovement.moveSpeed = updateMoveSpeed;
-            print("end melee");
+           // print("end melee");
+        }
+
+        public void Attack2Start()
+        {
+            attack2 = true;
+            playerMovement.moveSpeed = 0;
+            print(attack2);
+        }
+
+        public void Attack2End()
+        {
+            attack2 = false;
+            playerMovement.moveSpeed = updateMoveSpeed;
+            print(attack2);
         }
 
         public void ComboStart()
         {
             checkCombo = true;
             playerMovement.moveSpeed = 0;
-            print(checkCombo);
+            //print(checkCombo);
         }
 
         public void ComboEnd()
         {
             checkCombo = false;
             playerMovement.moveSpeed = updateMoveSpeed;
-            print(checkCombo);
+           // print(checkCombo);
+        }
+
+        public void Slam()
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, comboRadius, damageLayer);
+
+            foreach (Collider col in colliders)
+            {
+                Damageable damageable = col.GetComponent<Damageable>();
+                if (damageable != null)
+                {
+                    damageable.DoDamage(slamDamage);
+                }
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.yellow;
+
+            Gizmos.DrawWireSphere(transform.position, comboRadius);
+
         }
     }
 
