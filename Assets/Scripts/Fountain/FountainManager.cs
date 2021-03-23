@@ -10,6 +10,7 @@ namespace Assets.Scripts.Fountain
     {
         [SerializeField] private float healRadius = 1f;
         [SerializeField] private int healingRate = 1;
+        [SerializeField] private ParticleSystem healEffect;
 
         PlayerManager player;
         private void Start()
@@ -21,7 +22,7 @@ namespace Assets.Scripts.Fountain
             if (other.gameObject.CompareTag("Player"))
             {
                 player.healthRegeneration += healingRate;
-                print("heal on");
+                healEffect.Play();
             }
         }
 
@@ -30,7 +31,7 @@ namespace Assets.Scripts.Fountain
             if (other.gameObject.CompareTag("Player"))
             {
                 player.healthRegeneration -= healingRate;
-                print("heal off");
+                healEffect.Stop();
             }
 
         }
