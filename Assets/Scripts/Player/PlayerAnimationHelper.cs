@@ -13,6 +13,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private LayerMask damageLayer;
         [SerializeField] private float comboRadius;
         [SerializeField] private int slamDamage;
+        [SerializeField] private ParticleSystem slamEffect;
 
         private Animator anim;
         private bool checkCombo;
@@ -108,6 +109,7 @@ namespace Assets.Scripts.Player
                     damageable.DoDamage(slamDamage);
                 }
             }
+            slamEffect.Play();
         }
 
         private void OnDrawGizmos()

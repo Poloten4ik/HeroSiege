@@ -27,6 +27,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private Animator anim;
         [SerializeField] private Damageable damageable;
         [SerializeField] private LevelSystem levelSystem;
+        [SerializeField] private ParticleSystem levelUpEffect;
 
         [Header("Player Options")]
         [SerializeField] private float attackSpeed = 1f;
@@ -118,6 +119,7 @@ namespace Assets.Scripts.Player
             {
                 attackSpeed += 0.1f;
                 currentLvl = lvl;
+                levelUpEffect.Play();
             }
         }
 
