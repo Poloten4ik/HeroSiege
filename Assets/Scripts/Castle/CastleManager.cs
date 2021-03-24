@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Enemy;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace Assets.Scripts.Castle
 {
     public class CastleManager : MonoBehaviour
     {
+        public Action OnHealthChange = delegate { };
+
         [SerializeField] private Damageable damageable;
         public int health = 5000;
 
@@ -17,6 +20,7 @@ namespace Assets.Scripts.Castle
         private void ReceiveDamage(int damage)
         {
             health -= damage;
+            OnHealthChange();
 
             if (health <= 0)
             {

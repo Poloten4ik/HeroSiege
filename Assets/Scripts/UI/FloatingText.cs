@@ -19,9 +19,11 @@ namespace Assets.Scripts.UI
             (randomizeIntensity.y),
             (randomizeIntensity.z)
             );
+        }
 
-
-        }    
-
+        private void Update()
+        {
+            gameObject.transform.LookAt(Camera.main.transform);
+        }
     }
 }

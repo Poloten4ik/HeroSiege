@@ -2313,7 +2313,7 @@ MonoBehaviour:
   attackRadius: 3.03
   moveSpeed: 3.5
   attackSpeed: 1
-  health: 10000
+  health: 100
   castlePosition: {fileID: 1982329378273587965, guid: 0b7b52ce346d7a947a5779c8f94f15ba,
     type: 3}
   floatingTextPrefab: {fileID: 5927858887809795812, guid: 2407c4648a95bdb4db522675999f2379,

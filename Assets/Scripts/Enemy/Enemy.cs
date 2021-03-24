@@ -85,6 +85,7 @@ namespace Assets.Scripts.Enemy
 
                     break;
             }
+
         }
 
         public void ChangeState(EnemyState newState)
@@ -198,8 +199,10 @@ namespace Assets.Scripts.Enemy
         }
         private void ShowFloatingText(int damage)
         {
-            var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, transform);
+            var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
             go.GetComponent<TextMesh>().text = damage.ToString();
+
+           
         }
 
         private void OnDrawGizmos()
