@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Enemy;
+using Assets.Scripts.Fountain;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private Damageable damageable;
         [SerializeField] private LevelSystem levelSystem;
         [SerializeField] private ParticleSystem levelUpEffect;
+        [SerializeField] private FountainManager fountainManager;
 
         [Header("Player Options")]
         [SerializeField] private float attackSpeed = 1f;
@@ -134,9 +136,11 @@ namespace Assets.Scripts.Player
             while (true)
             {
                 yield return new WaitForSecondsRealtime(1);
-                if (currentHealth > maxHealth)
+                if (currentHealth >= maxHealth)
+                {
+                    fountainManager.healEffect.Stop();
                     continue;
-
+                }
                 currentHealth = currentHealth + healthRegeneration > maxHealth ? maxHealth : currentHealth + healthRegeneration;
                 OnHealthChange();
             }

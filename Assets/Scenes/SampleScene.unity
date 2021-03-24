@@ -179,7 +179,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 37.23
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -2300,7 +2300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -240, y: -207}
+  m_AnchoredPosition: {x: -154, y: -154}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &623668351
@@ -3335,7 +3335,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27850
+  m_Name: pb_Mesh15114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3572,7 +3572,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28012
+  m_Name: pb_Mesh15280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4069,9 +4069,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 1000012401438022, guid: b0f9a2fadab0e4e458d5c4b4ef736c0c, type: 3}
-  spawnDuration: 1
+  spawnDuration: 4
   nextWaveDelay: 7
-  numberOfEnemies: 10
+  numberOfEnemies: 1
 --- !u!224 &1647636766 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1101994257860681250, guid: 41fd9719f2bcac2429188d8e78164e20,
@@ -4116,7 +4116,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28026
+  m_Name: pb_Mesh15294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4392,9 +4392,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2787337462963762434, guid: 41fd9719f2bcac2429188d8e78164e20,
         type: 3}
+      propertyPath: healEffect
+      value: 
+      objectReference: {fileID: 203260773}
+    - target: {fileID: 2787337462963762434, guid: 41fd9719f2bcac2429188d8e78164e20,
+        type: 3}
       propertyPath: levelUpEffect
       value: 
       objectReference: {fileID: 1295441966}
+    - target: {fileID: 2787337462963762434, guid: 41fd9719f2bcac2429188d8e78164e20,
+        type: 3}
+      propertyPath: fountainManager
+      value: 
+      objectReference: {fileID: 1853957960}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41fd9719f2bcac2429188d8e78164e20, type: 3}
 --- !u!1 &1853957959 stripped
@@ -4773,7 +4783,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27814
+  m_Name: pb_Mesh15076
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

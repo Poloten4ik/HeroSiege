@@ -25,6 +25,9 @@ namespace Assets.Scripts.Enemy
 
         [Header("References")]
         [SerializeField] private Transform castlePosition;
+        [SerializeField] private GameObject floatingTextPrefab;
+
+        
 
         private float distanceToPlayer;
         private float distanceToCaslte;
@@ -182,6 +185,7 @@ namespace Assets.Scripts.Enemy
         {
             health -= damage;
             anim.SetTrigger("GetHit");
+            ShowFloatingText(damage);
             OnHealthChange();
             if (health <= 0)
             {
@@ -191,6 +195,11 @@ namespace Assets.Scripts.Enemy
                 anim.SetTrigger("Dead");
                 Destroy(gameObject, 1f);
             }
+        }
+        private void ShowFloatingText(int damage)
+        {
+            var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, transform);
+            go.GetComponent<TextMesh>().text = damage.ToString();
         }
 
         private void OnDrawGizmos()
