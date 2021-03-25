@@ -8,11 +8,11 @@ namespace Assets.Scripts.UI
     {
         [SerializeField] private float destroyTime = 3f;
         [SerializeField] private Vector3 randomizeIntensity = new Vector3 (2, 2, 0);
+        [SerializeField] private TextMesh damageText;
 
         void Start()
         {
             Destroy(gameObject, destroyTime);
-          
             transform.localPosition += new Vector3
             (
             Random.Range(-randomizeIntensity.x, randomizeIntensity.x),

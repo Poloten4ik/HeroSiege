@@ -15,8 +15,6 @@ namespace Assets.Scripts.Player
         
         PlayerManager player;
 
-
-
         void Start()
         {
             player = PlayerManager.Instance;

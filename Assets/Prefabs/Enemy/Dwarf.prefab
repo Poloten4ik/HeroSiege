@@ -2310,13 +2310,13 @@ MonoBehaviour:
   exp: 50
   reward: 3
   followRadius: 8
-  attackRadius: 3.03
+  attackRadius: 2.6
   moveSpeed: 3.5
   attackSpeed: 1
   health: 100
   castlePosition: {fileID: 1982329378273587965, guid: 0b7b52ce346d7a947a5779c8f94f15ba,
     type: 3}
-  floatingTextPrefab: {fileID: 5927858887809795812, guid: 2407c4648a95bdb4db522675999f2379,
+  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
     type: 3}
   activeState: 0
 --- !u!114 &7165072315935097002
@@ -2359,7 +2359,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.07
+  m_Radius: 1
   m_Height: 2.23
   m_Direction: 1
   m_Center: {x: 0, y: 1.04, z: 0}

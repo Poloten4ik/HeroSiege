@@ -200,7 +200,7 @@ namespace Assets.Scripts.Enemy
         private void ShowFloatingText(int damage)
         {
             var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
-            go.GetComponent<TextMesh>().text = damage.ToString();
+            go.GetComponentInChildren<TextMesh>().text = damage.ToString();
 
            
         }
