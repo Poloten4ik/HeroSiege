@@ -97,14 +97,13 @@ namespace Assets.Scripts.Player
         {
             checkCombo = true;
             isAttacking = true;
-            print(isAttacking);
+            print("combostart");
         }
 
         public void ComboEnd()
         {
             checkCombo = false;
             isAttacking = false;
-            print(isAttacking);
         }
 
         public void Slam()
@@ -125,6 +124,8 @@ namespace Assets.Scripts.Player
         public void SlamEnd()
         {
             anim.ResetTrigger("Attack");
+            anim.ResetTrigger("Combo");
+            print("combo");
         }
 
         private void OnDrawGizmos()

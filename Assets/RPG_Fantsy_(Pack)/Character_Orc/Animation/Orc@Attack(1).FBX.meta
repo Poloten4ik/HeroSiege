@@ -717,15 +717,15 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.99565214
-        functionName: StartMovespeed
+      - time: 0.6132686
+        functionName: SlamEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9988042
-        functionName: SlamEnd
+      - time: 0.9530745
+        functionName: StartMovespeed
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

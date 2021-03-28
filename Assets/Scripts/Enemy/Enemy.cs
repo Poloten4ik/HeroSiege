@@ -135,7 +135,7 @@ namespace Assets.Scripts.Enemy
             anim.SetBool("Attacking", false);
             agent.speed = moveSpeed;
 
-            if (distanceToPlayer >= followRadius)
+            if (distanceToPlayer >= followRadius && player.isPlayerAlive == false)
             {
                 ChangeState(EnemyState.MOVE_TO_CASTLE);
             }

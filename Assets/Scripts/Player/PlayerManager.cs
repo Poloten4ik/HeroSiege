@@ -34,6 +34,7 @@ namespace Assets.Scripts.Player
         [Header("Player Options")]
         [SerializeField] private float attackSpeed = 1f;
         [SerializeField] private int currentLvl = 1;
+        public bool isPlayerAlive = true;
         public int currentGold = 0;
 
         [Header("Player Health")]
@@ -113,6 +114,11 @@ namespace Assets.Scripts.Player
         {
             currentHealth -= damage;
             OnHealthChange();
+
+            if (currentHealth <= 0)
+            {
+                isPlayerAlive = false;
+            }
         }
 
         public void LevelUp(int lvl)
