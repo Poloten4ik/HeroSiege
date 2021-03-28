@@ -10,6 +10,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private Weapon weapon;
         [SerializeField] private PlayerManager playerMovement;
         [SerializeField] private float updateMoveSpeed;
+        [SerializeField] private float rotationSpeed;
         [SerializeField] private LayerMask damageLayer;
         [SerializeField] private float comboRadius;
         [SerializeField] private int slamDamage;
@@ -24,23 +25,22 @@ namespace Assets.Scripts.Player
         {
             anim = GetComponent<Animator>();
             updateMoveSpeed = playerMovement.moveSpeed;
+            rotationSpeed = playerMovement.rotationSpeed;
         }
 
         private void Update()
         {
+
             if (isAttacking)
             {
                 return;
             }
-        
 
             if (Input.GetMouseButtonDown(0))
             {
-                playerMovement.moveSpeed = 0.5f;
                 if (checkCombo)
                 {
                     anim.SetTrigger("Combo");
-
                 }
                 else if (attack2)
                 {
@@ -53,11 +53,23 @@ namespace Assets.Scripts.Player
             }
         }
 
+        public void StopMovespeed()
+        {
+            playerMovement.moveSpeed = 0;
+            playerMovement.rotationSpeed = 0;
+        }
+
+        public void StartMovespeed()
+        {
+            playerMovement.moveSpeed = updateMoveSpeed;
+            playerMovement.rotationSpeed = rotationSpeed;
+        }
+
         public void MeleeAttackStart()
         {
             isAttacking = true;
             weapon.AttackStart();
-         //  print("start melee");
+            //  print("start melee");
         }
 
         public void MeleeAttackEnd()
@@ -65,36 +77,34 @@ namespace Assets.Scripts.Player
             isAttacking = false;
             weapon.AttackEnd();
             anim.ResetTrigger("Attack");
-            playerMovement.moveSpeed = updateMoveSpeed;
-           // print("end melee");
+
+            // print("end melee");
         }
 
         public void Attack2Start()
         {
             attack2 = true;
-            playerMovement.moveSpeed = 0;
-            print(attack2);
+            isAttacking = true;
         }
 
         public void Attack2End()
         {
             attack2 = false;
-            playerMovement.moveSpeed = updateMoveSpeed;
-            print(attack2);
+            isAttacking = false;
         }
 
         public void ComboStart()
         {
             checkCombo = true;
-            playerMovement.moveSpeed = 0;
-            //print(checkCombo);
+            isAttacking = true;
+            print(isAttacking);
         }
 
         public void ComboEnd()
         {
             checkCombo = false;
-            playerMovement.moveSpeed = updateMoveSpeed;
-           // print(checkCombo);
+            isAttacking = false;
+            print(isAttacking);
         }
 
         public void Slam()
@@ -110,6 +120,11 @@ namespace Assets.Scripts.Player
                 }
             }
             slamEffect.Play();
+        }
+
+        public void SlamEnd()
+        {
+            anim.ResetTrigger("Attack");
         }
 
         private void OnDrawGizmos()

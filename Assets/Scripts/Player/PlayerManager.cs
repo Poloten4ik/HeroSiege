@@ -18,7 +18,7 @@ namespace Assets.Scripts.Player
         public float moveSpeed = 10f;
 
         [Header("Rotation config")]
-        [SerializeField] private float rotationSpeed = 1f;
+        public float rotationSpeed = 1f;
 
         [Header("Gravity")]
         [SerializeField] private float gravityScale = 1;
