@@ -38,6 +38,7 @@ namespace Assets.Scripts.Fountain
                 player.healthRegeneration += healingRate;
                 if (player.currentHealth < player.maxHealth)
                 healEffect.Play();
+                print("start");
             }
         }
 
@@ -47,6 +48,7 @@ namespace Assets.Scripts.Fountain
             {
                 player.healthRegeneration -= healingRate;
                 healEffect.Stop();
+                print("stop");
             }
 
         }
