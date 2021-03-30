@@ -13,6 +13,7 @@ namespace Assets.Scripts.Castle
         [SerializeField] private Damageable damageable;
         public int health = 5000;
 
+
         private void Start()
         {
             damageable.OnReceiveDamage += ReceiveDamage;

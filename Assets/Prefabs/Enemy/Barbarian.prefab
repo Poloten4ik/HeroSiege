@@ -731,8 +731,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 9.331521, z: 89.41}
-  m_Center: {x: -0.00000009373098, y: -3.7275143, z: 33.68}
+  m_Size: {x: 6, y: 10, z: 124.9}
+  m_Center: {x: 3.11, y: 1.11, z: 60}
 --- !u!1 &1000010714295554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,8 +1144,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.136481, y: 9.859764, z: 77.4}
-  m_Center: {x: -0.0000036503973, y: -0.0000036276226, z: 29.2}
+  m_Size: {x: 6, y: 10, z: 126.5}
+  m_Center: {x: -0.0000036503973, y: -0.0000036276226, z: 63.3}
 --- !u!1 &1000011040284134
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,12 +2349,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exp: 20
   reward: 3
-  followRadius: 8
-  attackRadius: 2.7
+  followRadius: 15
+  attackRadius: 3.5
   moveSpeed: 3.5
-  attackSpeed: 1
+  attackSpeed: 0.6
   health: 100
-  castlePosition: {fileID: 1982329378273587965, guid: 0b7b52ce346d7a947a5779c8f94f15ba,
+  castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,
     type: 3}
   floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
     type: 3}

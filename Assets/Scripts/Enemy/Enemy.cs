@@ -156,6 +156,7 @@ namespace Assets.Scripts.Enemy
             {
                 nextAttack = attackSpeed;
                 anim.SetTrigger("Attack");
+                this.gameObject.transform.LookAt(castlePosition);
             }
 
             if (distanceToPlayer <= followRadius)
@@ -175,6 +176,7 @@ namespace Assets.Scripts.Enemy
             {
                 nextAttack = attackSpeed;
                 anim.SetTrigger("Attack");
+                this.gameObject.transform.LookAt(player.transform.position);
             }
             if (distanceToPlayer > attackRadius)
             {

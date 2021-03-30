@@ -73,7 +73,6 @@ namespace Assets.Scripts.Player
         private void Update()
         {
             Move();
-            anim.SetFloat("AttackSpeed", attackSpeed);
         }
 
         private void Move()
@@ -125,8 +124,8 @@ namespace Assets.Scripts.Player
         {
             if (currentLvl < lvl)
             {
-                attackSpeed += 0.1f;
                 currentLvl = lvl;
+
                 levelUpEffect.Play();
             }
         }

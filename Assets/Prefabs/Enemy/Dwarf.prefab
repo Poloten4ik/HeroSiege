@@ -2309,12 +2309,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exp: 50
   reward: 3
-  followRadius: 8
-  attackRadius: 2.6
+  followRadius: 15
+  attackRadius: 3.5
   moveSpeed: 3.5
-  attackSpeed: 1
+  attackSpeed: 0.8
   health: 100
-  castlePosition: {fileID: 1982329378273587965, guid: 0b7b52ce346d7a947a5779c8f94f15ba,
+  castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,
     type: 3}
   floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
     type: 3}
@@ -2359,10 +2359,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 1.51
   m_Height: 2.23
   m_Direction: 1
-  m_Center: {x: 0, y: 1.04, z: 0}
+  m_Center: {x: 0, y: 1.55, z: 0}
 --- !u!195 &5531118271667132237
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2373,7 +2373,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2513,7 +2513,7 @@ GameObject:
   - component: {fileID: 137000013240949568}
   - component: {fileID: 8441711692390477564}
   - component: {fileID: 8437620900875679651}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Low_Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2611,8 +2611,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.57708, y: 59.1, z: 14.303143}
-  m_Center: {x: 17.315517, y: 11.4, z: 4.0796165}
+  m_Size: {x: 9.57708, y: 80.8, z: 14.303143}
+  m_Center: {x: 17.315517, y: -9.5, z: 4.0796165}
 --- !u!1 &1000012556439598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,7 +3717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013689320572}
   - component: {fileID: 137000013108392714}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Low_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

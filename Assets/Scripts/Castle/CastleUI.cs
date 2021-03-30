@@ -8,6 +8,8 @@ namespace Assets.Scripts.Castle
     public class CastleUI : MonoBehaviour
     {
         public Slider castleHealth;
+        public Text maxHpText;
+        public Text currentHPText;
 
         CastleManager castleManager;
         void Start()
@@ -17,16 +19,14 @@ namespace Assets.Scripts.Castle
 
             castleHealth.maxValue = castleManager.health;
             castleHealth.value = castleManager.health;
-        }
 
-        private void Update()
-        {
-            castleHealth.transform.LookAt(Camera.main.transform);
+            maxHpText.text = castleHealth.maxValue.ToString();
+            currentHPText.text = castleHealth.value.ToString();
         }
-
         public void UpdateHealth()
         {
             castleHealth.value = castleManager.health;
+            currentHPText.text = castleHealth.value.ToString();
         }
     }
 }
