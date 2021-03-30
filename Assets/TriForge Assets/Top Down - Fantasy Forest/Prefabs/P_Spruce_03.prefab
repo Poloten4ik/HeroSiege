@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2162176568139678121}
   - component: {fileID: 5740536987775460221}
   - component: {fileID: 6377788974990222059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: P_Spruce_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 8943874799393647116}
   - component: {fileID: 2346160701367849127}
   - component: {fileID: 3687825836048956204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spruce_03(Clone) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +129,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -141,6 +142,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -164,7 +166,7 @@ GameObject:
   - component: {fileID: 1786616140081766423}
   - component: {fileID: 3627673322096046901}
   - component: {fileID: 5626222267876755354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spruce_03(Clone) (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,6 +209,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -218,6 +221,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -241,7 +245,7 @@ GameObject:
   - component: {fileID: 6330954698288288588}
   - component: {fileID: 6270020929324378363}
   - component: {fileID: 378783370132425888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spruce_03(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,6 +288,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -296,6 +301,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

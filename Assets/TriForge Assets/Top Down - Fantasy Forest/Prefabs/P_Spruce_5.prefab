@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 358705096611100003}
   - component: {fileID: 1928176524107015286}
   - component: {fileID: 8650263218721489311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spruce_05(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -66,6 +67,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -89,7 +91,7 @@ GameObject:
   - component: {fileID: 3290528998343880189}
   - component: {fileID: 6957196144821412120}
   - component: {fileID: 1399561753717341482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spruce_05(Clone) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,6 +134,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -144,6 +147,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -167,7 +171,7 @@ GameObject:
   - component: {fileID: 4820578674959505100}
   - component: {fileID: 5156770759070197416}
   - component: {fileID: 8143612042865486427}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spruce_05(Clone) (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,6 +214,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -221,6 +226,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -244,7 +250,7 @@ GameObject:
   - component: {fileID: 8883754409036314215}
   - component: {fileID: 8234377174765159875}
   - component: {fileID: 6423991504540250518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: P_Spruce_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}

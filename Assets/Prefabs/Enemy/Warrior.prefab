@@ -97,7 +97,7 @@ MonoBehaviour:
   moveSpeed: 4
   attackSpeed: 1
   health: 120
-  castlePosition: {fileID: 1982329378273587965, guid: 0b7b52ce346d7a947a5779c8f94f15ba,
+  castlePosition: {fileID: 1461140231908642282, guid: d4a9ccb6f73f0424a876a20a16c60e66,
     type: 3}
   floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
     type: 3}
@@ -142,9 +142,9 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 99
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
