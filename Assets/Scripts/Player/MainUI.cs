@@ -20,20 +20,22 @@ namespace Assets.Scripts.Player
         {
             player = PlayerManager.Instance;
             player.OnHealthChange += UpdateHealth;
-            player.OnGoldChange += UpdateGold;
-            Filler.fillAmount = player.currentHealth / player.maxHealth;
 
+            player.OnGoldChange += UpdateGold;
+          
             playerHealth.maxValue = player.maxHealth;
             playerHealth.value = player.currentHealth;
 
             maxHpText.text = player.maxHealth.ToString();
-            currentHpText.text = player.currentHealth.ToString();
+            currentHpText.text = player.maxHealth.ToString();
+
             currentGoldText.text = player.currentGold.ToString();
+
+            Filler.fillAmount = 1;
         }
 
         public void UpdateHealth()
-        {
-            playerHealth.value = player.currentHealth;
+        { 
             currentHpText.text = player.currentHealth.ToString();
             maxHpText.text = player.maxHealth.ToString();
             Filler.fillAmount = player.currentHealth / player.maxHealth;

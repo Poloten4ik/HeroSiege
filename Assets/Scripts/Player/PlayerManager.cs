@@ -56,6 +56,7 @@ namespace Assets.Scripts.Player
             damageable.OnReceiveDamage += ReceiveDamage;
             currentHealth = maxHealth;
 
+            print(currentHealth);
             StartCoroutine(HealthRegeneration());
         }
 

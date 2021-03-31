@@ -89,7 +89,6 @@ namespace Assets.Scripts.Enemy
 
                     break;
             }
-            print(player.isDead);
         }
 
         public void ChangeState(EnemyState newState)
