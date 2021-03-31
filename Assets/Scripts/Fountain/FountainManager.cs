@@ -27,10 +27,12 @@ namespace Assets.Scripts.Fountain
 
             Instance = this;
         }
+
         private void Start()
         {
             player = PlayerManager.Instance;
         }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))

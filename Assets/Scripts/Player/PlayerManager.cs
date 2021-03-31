@@ -32,14 +32,13 @@ namespace Assets.Scripts.Player
         [SerializeField] private FountainManager fountainManager;
 
         [Header("Player Options")]
-        [SerializeField] private float attackSpeed = 1f;
         [SerializeField] private int currentLvl = 1;
         public bool isPlayerAlive = true;
         public int currentGold = 0;
 
         [Header("Player Health")]
         public int maxHealth = 100;
-        public int currentHealth;
+        public float currentHealth;
         public int healthRegeneration = 1;
         public bool isHealingOn;
 
@@ -125,7 +124,7 @@ namespace Assets.Scripts.Player
             if (currentLvl < lvl)
             {
                 currentLvl = lvl;
-
+                maxHealth += 200;
                 levelUpEffect.Play();
             }
         }

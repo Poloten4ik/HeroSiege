@@ -12,7 +12,8 @@ namespace Assets.Scripts.Player
         public Text currentHpText;
         public Text maxHpText;
         public Text currentGoldText;
-        
+        public Image Filler;
+
         PlayerManager player;
 
         void Start()
@@ -20,6 +21,7 @@ namespace Assets.Scripts.Player
             player = PlayerManager.Instance;
             player.OnHealthChange += UpdateHealth;
             player.OnGoldChange += UpdateGold;
+            Filler.fillAmount = player.currentHealth / player.maxHealth;
 
             playerHealth.maxValue = player.maxHealth;
             playerHealth.value = player.currentHealth;
@@ -33,6 +35,8 @@ namespace Assets.Scripts.Player
         {
             playerHealth.value = player.currentHealth;
             currentHpText.text = player.currentHealth.ToString();
+            maxHpText.text = player.maxHealth.ToString();
+            Filler.fillAmount = player.currentHealth / player.maxHealth;
         }
 
         public void UpdateGold()
