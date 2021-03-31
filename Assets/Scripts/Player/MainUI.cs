@@ -13,7 +13,7 @@ namespace Assets.Scripts.Player
         public Text maxHpText;
         public Text currentGoldText;
         public Image Filler;
-
+       
         PlayerManager player;
 
         void Start()

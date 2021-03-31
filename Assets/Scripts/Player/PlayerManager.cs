@@ -30,11 +30,12 @@ namespace Assets.Scripts.Player
         [SerializeField] private LevelSystem levelSystem;
         [SerializeField] private ParticleSystem levelUpEffect;
         [SerializeField] private FountainManager fountainManager;
+        [SerializeField] private GameObject loseScreen;
 
         [Header("Player Options")]
         [SerializeField] private int currentLvl = 1;
-        public bool isPlayerAlive = true;
         public int currentGold = 0;
+        public bool isDead = false;
 
         [Header("Player Health")]
         public int maxHealth = 100;
@@ -71,7 +72,12 @@ namespace Assets.Scripts.Player
 
         private void Update()
         {
-            Move();
+            if (!isDead)
+            {
+                Move();
+            }
+           
+            isPlayerDead();
         }
 
         private void Move()
@@ -112,11 +118,26 @@ namespace Assets.Scripts.Player
         {
             currentHealth -= damage;
             OnHealthChange();
+        }
 
+
+        private void isPlayerDead()
+        {
             if (currentHealth <= 0)
             {
-                isPlayerAlive = false;
+                isDead = true;
+                anim.SetTrigger("Dead");
+                controller.enabled = false;
+                Destroy(gameObject, 4f);
+                StartCoroutine(LoseScreen());
             }
+        }
+
+        private IEnumerator LoseScreen()
+        {
+            yield return new WaitForSeconds(3);
+            loseScreen.SetActive(true);
+            Time.timeScale = 0;
         }
 
         public void LevelUp(int lvl)

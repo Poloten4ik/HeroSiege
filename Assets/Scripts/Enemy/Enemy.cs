@@ -60,7 +60,11 @@ namespace Assets.Scripts.Enemy
         {
             //UpdateTarget();
 
-            distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+            if (!player.isDead)
+            {
+                distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+            }
+            
             distanceToCaslte = Vector3.Distance(transform.position, castlePosition.transform.position);
 
             switch (activeState)
@@ -85,7 +89,7 @@ namespace Assets.Scripts.Enemy
 
                     break;
             }
-
+            print(player.isDead);
         }
 
         public void ChangeState(EnemyState newState)
@@ -117,7 +121,7 @@ namespace Assets.Scripts.Enemy
         {
             anim.SetBool("Attacking", false);
             agent.speed = moveSpeed;
-            if (distanceToPlayer <= followRadius)
+            if (!player.isDead && distanceToPlayer <= followRadius)
             {
                 ChangeState(EnemyState.MOVE_TO_PLAYER);
             }
@@ -131,19 +135,25 @@ namespace Assets.Scripts.Enemy
 
         private void MoveToPlayer()
         {
-            agent.SetDestination(player.transform.position);
-            anim.SetBool("Attacking", false);
-            agent.speed = moveSpeed;
+            if (!player.isDead)
+            {
+                agent.SetDestination(player.transform.position);
+                anim.SetBool("Attacking", false);
+                agent.speed = moveSpeed;
 
-            if (distanceToPlayer >= followRadius)
+                if (distanceToPlayer >= followRadius)
+                {
+                    ChangeState(EnemyState.MOVE_TO_CASTLE);
+                }
+                else if (distanceToPlayer < attackRadius)
+                {
+                    ChangeState(EnemyState.ATTACK_PLAYER);
+                }
+            }
+            else if (player.isDead)
             {
                 ChangeState(EnemyState.MOVE_TO_CASTLE);
             }
-            else if (distanceToPlayer < attackRadius)
-            {
-                ChangeState(EnemyState.ATTACK_PLAYER);
-            }
-           
         }
 
         private void AttackCastle()
@@ -168,20 +178,29 @@ namespace Assets.Scripts.Enemy
 
         private void AttackPlayer()
         {
-            anim.SetBool("Attacking", true);          
-            agent.speed = default;
+            if (!player.isDead)
+            {
+                anim.SetBool("Attacking", true);
+                agent.speed = default;
 
-            nextAttack -= Time.deltaTime;
-            if (nextAttack <= 0)
-            {
-                nextAttack = attackSpeed;
-                anim.SetTrigger("Attack");
-                this.gameObject.transform.LookAt(player.transform.position);
+                nextAttack -= Time.deltaTime;
+                if (nextAttack <= 0)
+                {
+                    nextAttack = attackSpeed;
+                    anim.SetTrigger("Attack");
+                    this.gameObject.transform.LookAt(player.transform.position);
+                }
+                if (distanceToPlayer > attackRadius)
+                {
+                    ChangeState(EnemyState.MOVE_TO_PLAYER);
+                }
             }
-            if (distanceToPlayer > attackRadius)
+
+            else
             {
-                ChangeState(EnemyState.MOVE_TO_PLAYER);
+                ChangeState(EnemyState.MOVE_TO_CASTLE);
             }
+
         }
 
         private void ReciveDamage(int damage)
@@ -192,7 +211,7 @@ namespace Assets.Scripts.Enemy
             OnHealthChange();
             if (health <= 0)
             {
-                col.enabled = false;
+                col.isTrigger = true;
                 levelSystem.AddExperience(exp);
                 player.AddGold(reward);
                 anim.SetTrigger("Dead");

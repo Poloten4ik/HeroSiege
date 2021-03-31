@@ -17,8 +17,10 @@ namespace Assets.Scripts.Player
         // Update is called once per frame
         private void LateUpdate()
         {
-            transform.position = player.transform.position + Vector3.up * distance;
+            if (!player.isDead)
+            {
+                transform.position = player.transform.position + Vector3.up * distance;
+            }  
         }
-
     }
 }
