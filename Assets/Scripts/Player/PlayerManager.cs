@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Enemy;
+﻿using Assets.Scripts.Enemies;
 using Assets.Scripts.Fountain;
 using System;
 using System.Collections;
@@ -13,6 +13,7 @@ namespace Assets.Scripts.Player
         public static PlayerManager Instance { get; private set; }
         public Action OnHealthChange = delegate { };
         public Action OnGoldChange = delegate { };
+        public Action EnemyKilled = delegate { };
 
         [Header("Movement config")]
         public float moveSpeed = 10f;
@@ -36,6 +37,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private int currentLvl = 1;
         public int currentGold = 0;
         public bool isDead = false;
+        public int killedEnemies = 0;
 
         [Header("Player Health")]
         public int maxHealth = 100;
@@ -56,7 +58,6 @@ namespace Assets.Scripts.Player
             damageable.OnReceiveDamage += ReceiveDamage;
             currentHealth = maxHealth;
 
-            print(currentHealth);
             StartCoroutine(HealthRegeneration());
         }
 
@@ -77,7 +78,7 @@ namespace Assets.Scripts.Player
             {
                 Move();
             }
-           
+
             isPlayerDead();
         }
 
@@ -117,7 +118,7 @@ namespace Assets.Scripts.Player
 
         private void ReceiveDamage(int damage)
         {
-            currentHealth -= damage;
+            currentHealth = currentHealth - damage < 0 ? 0 : currentHealth - damage;
             OnHealthChange();
         }
 
@@ -155,6 +156,12 @@ namespace Assets.Scripts.Player
         {
             currentGold += reward;
             OnGoldChange();
+        }
+
+        public void KilledEnemies(int count)
+        {
+            killedEnemies += count;
+            EnemyKilled();
         }
 
         public IEnumerator HealthRegeneration()

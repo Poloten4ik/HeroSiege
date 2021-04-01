@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Enemy
+namespace Assets.Scripts.Enemies
 {
     public class EnemySpawner : MonoBehaviour
     {
@@ -12,7 +12,14 @@ namespace Assets.Scripts.Enemy
         [Header("Wave parameters")]
         [SerializeField] private float spawnDuration;
         [SerializeField] private float nextWaveDelay;
-        [SerializeField] int numberOfEnemies;
+        [SerializeField] private int numberOfEnemies;
+        [HideInInspector]
+        public int allNumberOfEnemies = 0;
+
+        private void Awake()
+        {
+            allNumberOfEnemies = enemyPrefabs.Count * numberOfEnemies * 2;
+        }
 
         private void Start()
         {
@@ -27,7 +34,7 @@ namespace Assets.Scripts.Enemy
             {
                 yield return new WaitForSeconds(spawnDuration);
                 Instantiate(enemyPrefabs[wave], transform.position, transform.rotation);
-                countOfEnemies += 1;
+                countOfEnemies++;
 
                 if (numberOfEnemies == countOfEnemies)
                 {

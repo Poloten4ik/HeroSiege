@@ -6,7 +6,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Assets.Scripts.Enemy
+namespace Assets.Scripts.Enemies
 {
     [RequireComponent(typeof(Damageable))]
 
@@ -27,8 +27,6 @@ namespace Assets.Scripts.Enemy
         [SerializeField] private Transform castlePosition;
         [SerializeField] private GameObject floatingTextPrefab;
 
-        
-
         private float distanceToPlayer;
         private float distanceToCaslte;
         private float nextAttack;
@@ -38,6 +36,9 @@ namespace Assets.Scripts.Enemy
         NavMeshAgent agent;
         LevelSystem levelSystem;
         Collider col;
+
+
+        public int allEnemiesDead;
 
         public EnemyState activeState;
 
@@ -64,7 +65,7 @@ namespace Assets.Scripts.Enemy
             {
                 distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             }
-            
+
             distanceToCaslte = Vector3.Distance(transform.position, castlePosition.transform.position);
 
             switch (activeState)
@@ -80,7 +81,7 @@ namespace Assets.Scripts.Enemy
                     break;
                 case EnemyState.ATTACK_PLAYER:
                     AttackPlayer();
-                    break; 
+                    break;
 
                 case EnemyState.SPELL_CAST:
 
@@ -104,7 +105,7 @@ namespace Assets.Scripts.Enemy
                     break;
 
                 case EnemyState.ATTACK_PLAYER:
-                  
+
                     break;
 
                 case EnemyState.SPELL_CAST:
@@ -187,7 +188,7 @@ namespace Assets.Scripts.Enemy
                 {
                     nextAttack = attackSpeed;
                     anim.SetTrigger("Attack");
-                   
+
                 }
                 if (distanceToPlayer > attackRadius)
                 {
@@ -204,17 +205,18 @@ namespace Assets.Scripts.Enemy
 
         private void ReciveDamage(int damage)
         {
-            health -= damage;
+            health = health - damage < 0 ? 0 : health - damage;
             anim.SetTrigger("GetHit");
             ShowFloatingText(damage);
             OnHealthChange();
             if (health <= 0)
             {
-                col.isTrigger = true;
+                col.enabled = false;
                 levelSystem.AddExperience(exp);
                 player.AddGold(reward);
                 anim.SetTrigger("Dead");
                 Destroy(gameObject, 1f);
+                player.KilledEnemies(1);
             }
         }
         private void ShowFloatingText(int damage)
@@ -222,7 +224,7 @@ namespace Assets.Scripts.Enemy
             var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
             go.GetComponentInChildren<TextMesh>().text = damage.ToString();
 
-           
+
         }
 
         private void OnDrawGizmos()

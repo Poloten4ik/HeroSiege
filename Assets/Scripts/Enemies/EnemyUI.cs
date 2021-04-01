@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.Enemy
+namespace Assets.Scripts.Enemies
 {
     public class EnemyUI : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Enemy;
+﻿using Assets.Scripts.Enemies;
 using System;
 using System.Collections;
 using System.Collections.Generic;

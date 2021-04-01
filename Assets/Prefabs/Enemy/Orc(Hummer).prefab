@@ -123,7 +123,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.39, y: 0.4852358, z: 2.41}
+  m_Size: {x: 0.39, y: 0.4852358, z: 1.45}
   m_Center: {x: 0, y: 0.00000009872019, z: 0.45}
 --- !u!114 &425417258296109861
 MonoBehaviour:
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71b297230a18a042b88a961deb0c0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 300
+  damage: 100
 --- !u!1 &1000010133446558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1518,7 @@ GameObject:
   - component: {fileID: 664288190}
   - component: {fileID: 664288193}
   - component: {fileID: 664288194}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Orc(Hummer)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1576,7 +1576,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 1.14
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -1647,11 +1647,13 @@ MonoBehaviour:
   followRadius: 19.52
   attackRadius: 9.36
   moveSpeed: 3.5
-  attackSpeed: 1
-  health: 10000
-  castlePosition: {fileID: 0}
+  attackSpeed: 2
+  health: 5000
+  castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,
+    type: 3}
   floatingTextPrefab: {fileID: 5927858887809795812, guid: 2407c4648a95bdb4db522675999f2379,
     type: 3}
+  allEnemiesDead: 0
   activeState: 0
 --- !u!114 &664288194
 MonoBehaviour:
@@ -2624,7 +2626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012687117510}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

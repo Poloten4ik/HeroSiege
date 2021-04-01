@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Enemy
+namespace Assets.Scripts.Enemies
 {
     public class Damageable : MonoBehaviour
     {

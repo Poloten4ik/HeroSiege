@@ -101,6 +101,9 @@ MonoBehaviour:
     type: 3}
   floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
     type: 3}
+  enemySpawner: {fileID: 4900579156423972843, guid: 9b84f7ab13960bf4a8fa931ef991dd5f,
+    type: 3}
+  allEnemiesDead: 0
   activeState: 0
 --- !u!54 &7926709521979745190
 Rigidbody:

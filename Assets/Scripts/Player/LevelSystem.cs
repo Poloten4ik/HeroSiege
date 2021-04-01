@@ -8,12 +8,12 @@ namespace Assets.Scripts.Player
     public class LevelSystem : MonoBehaviour
     {
         public static LevelSystem Instance { get; private set; }
+        public Action OnExpChange = delegate { };
+        private PlayerManager playerManager;
 
-        [SerializeField] private int experience = 0;
-        [SerializeField] private int experienceToNextLevel = 100;
-
-        PlayerManager playerManager;
         public int playerLvl = 1;
+        public float experience = 0;
+        public float experienceToNextLevel = 100;
 
         private void Awake()
         {
@@ -34,6 +34,7 @@ namespace Assets.Scripts.Player
         public void AddExperience(int amount)
         {
             experience += amount;
+            OnExpChange();
             if (experience >= experienceToNextLevel)
             {
                 playerLvl++;
