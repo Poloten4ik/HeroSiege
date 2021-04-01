@@ -12,23 +12,31 @@ namespace Assets.Scripts.Boss
         public Text maxHp;
         public Text currentHp;
 
-        public void Init(Enemy enemy)
+        ReciveDamageBoss reciveDamageBoss;
+       
+        private void Start()
         {
-            enemy.OnHealthChange += () => UpdateHealth(enemy);
-
-            enemyHealth.maxValue = enemy.health;
-            enemyHealth.value = enemy.health;
-
-            maxHp.text = enemy.health.ToString();
-            currentHp.text = enemy.health.ToString();
-
+            reciveDamageBoss = GetComponent<ReciveDamageBoss>();
         }
 
-        public void UpdateHealth(Enemy enemy)
+        public void Init(ReciveDamageBoss reciveDamageBoss)
         {
-            enemyHealth.value = enemy.health;
-            currentHp.text = enemy.health.ToString();
+            reciveDamageBoss.OnHealthChange += () => UpdateHealth(reciveDamageBoss);
+
+            enemyHealth.maxValue = reciveDamageBoss.enemy.health;
+            enemyHealth.value = reciveDamageBoss.enemy.health;
+
+            maxHp.text = reciveDamageBoss.enemy.health.ToString();
+            currentHp.text = reciveDamageBoss.enemy.health.ToString();
         }
+
+        public void UpdateHealth(ReciveDamageBoss reciveDamageBoss)
+        {
+            enemyHealth.value = reciveDamageBoss.enemy.health;
+            currentHp.text = reciveDamageBoss.enemy.health.ToString();
+        }
+
+        
     }
 }
 

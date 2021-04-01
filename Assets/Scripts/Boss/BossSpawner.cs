@@ -9,11 +9,24 @@ namespace Assets.Scripts.Boss
 {
     public class BossSpawner : MonoBehaviour
     {
+        public static BossSpawner Instance { get; private set; }
+
         [SerializeField] private GameObject bossPrefab;
-        [SerializeField] private BossUI bossUI;
         [SerializeField] private EnemySpawner enemySpawner;
         [SerializeField] private PlayerManager player;
 
+        public BossUI bossUI;
+
+        private void Awake()
+        {
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+        }
 
         private void Start()
         {
@@ -25,10 +38,10 @@ namespace Assets.Scripts.Boss
             if (player.killedEnemies == enemySpawner.allNumberOfEnemies)
             {
                 var obj = Instantiate(bossPrefab, transform.position, transform.rotation);
-                var enemy = obj.GetComponent<Enemy>();
+                var reciveDamageBoss = obj.GetComponent<ReciveDamageBoss>();
 
                 bossUI.gameObject.SetActive(true);
-                bossUI.Init(enemy);
+                bossUI.Init(reciveDamageBoss);
             }
         }
     }

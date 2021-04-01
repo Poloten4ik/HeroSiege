@@ -2396,6 +2396,7 @@ GameObject:
   - component: {fileID: 9019994795933513088}
   - component: {fileID: -2974679157663084825}
   - component: {fileID: 7955197216202209109}
+  - component: {fileID: -6991620878642304871}
   m_Layer: 11
   m_Name: Demon
   m_TagString: Untagged
@@ -2468,19 +2469,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949f998d1c2e5b47a63201146ef1a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 50
-  reward: 3
   followRadius: 15
   attackRadius: 4
   moveSpeed: 3
   attackSpeed: 2
   health: 40
+  exp: 50
+  reward: 3
   castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,
     type: 3}
-  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
-    type: 3}
-  enemySpawner: {fileID: 4900579156423972843, guid: 9b84f7ab13960bf4a8fa931ef991dd5f,
-    type: 3}
+  enemyUI: {fileID: 8593718919957300335}
   allEnemiesDead: 0
   activeState: 2
 --- !u!114 &4849780998216164850
@@ -2574,6 +2572,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 3016597285180136144}
+--- !u!114 &-6991620878642304871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012459049514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec85a93fad93c84fa3ae0c4c0216206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
+    type: 3}
+  minimap: {fileID: 1872725780276339635}
 --- !u!1 &1000012627513092
 GameObject:
   m_ObjectHideFlags: 0

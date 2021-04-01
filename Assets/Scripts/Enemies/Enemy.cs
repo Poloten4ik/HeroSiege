@@ -12,47 +12,50 @@ namespace Assets.Scripts.Enemies
 
     public class Enemy : MonoBehaviour
     {
-        public Action OnHealthChange = delegate { };
-
+      
         [Header("Enemy Options")]
-        [SerializeField] private int exp = 20;
-        [SerializeField] private int reward = 3;
         [SerializeField] private float followRadius = 8f;
         [SerializeField] private float attackRadius = 2f;
         [SerializeField] private float moveSpeed = 3.5f;
         [SerializeField] private float attackSpeed = 1f;
         public int health = 100;
+        public int exp = 20;
+        public int reward = 3;
 
         [Header("References")]
         [SerializeField] private Transform castlePosition;
-        [SerializeField] private GameObject floatingTextPrefab;
+        public GameObject enemyUI;
 
         private float distanceToPlayer;
         private float distanceToCaslte;
         private float nextAttack;
         Animator anim;
-        Damageable damageable;
+    
         PlayerManager player;
         NavMeshAgent agent;
         LevelSystem levelSystem;
         Collider col;
+        Rigidbody rb;
 
 
         public int allEnemiesDead;
 
         public EnemyState activeState;
 
-        private void Start()
+        private void Awake()
         {
             anim = GetComponent<Animator>();
-            levelSystem = LevelSystem.Instance;
-            player = PlayerManager.Instance;
-            damageable = GetComponent<Damageable>();
+            rb = GetComponent<Rigidbody>();
             agent = GetComponent<NavMeshAgent>();
-            agent.speed = moveSpeed;
-            damageable.OnReceiveDamage += ReciveDamage;
             col = GetComponent<Collider>();
 
+        }
+        private void Start()
+        {
+            
+            player = PlayerManager.Instance;   
+            agent.speed = moveSpeed;
+           
             ChangeState(EnemyState.MOVE_TO_CASTLE);
         }
 
@@ -200,30 +203,6 @@ namespace Assets.Scripts.Enemies
             {
                 ChangeState(EnemyState.MOVE_TO_CASTLE);
             }
-
-        }
-
-        private void ReciveDamage(int damage)
-        {
-            health = health - damage < 0 ? 0 : health - damage;
-            anim.SetTrigger("GetHit");
-            ShowFloatingText(damage);
-            OnHealthChange();
-            if (health <= 0)
-            {
-                col.enabled = false;
-                levelSystem.AddExperience(exp);
-                player.AddGold(reward);
-                anim.SetTrigger("Dead");
-                Destroy(gameObject, 1f);
-                player.KilledEnemies(1);
-            }
-        }
-        private void ShowFloatingText(int damage)
-        {
-            var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
-            go.GetComponentInChildren<TextMesh>().text = damage.ToString();
-
 
         }
 

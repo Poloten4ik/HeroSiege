@@ -633,6 +633,7 @@ GameObject:
   - component: {fileID: 4956059938281548541}
   - component: {fileID: 498425065863437781}
   - component: {fileID: -7144593170556870962}
+  - component: {fileID: 1253544664804440617}
   m_Layer: 11
   m_Name: Knight
   m_TagString: Untagged
@@ -708,17 +709,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949f998d1c2e5b47a63201146ef1a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 20
-  reward: 3
   followRadius: 15
   attackRadius: 3.5
   moveSpeed: 3.5
   attackSpeed: 1.2
   health: 100
+  exp: 20
+  reward: 3
   castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,
     type: 3}
-  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
-    type: 3}
+  enemyUI: {fileID: 4947014376241889975}
+  allEnemiesDead: 0
   activeState: 0
 --- !u!114 &-1941566100840032914
 MonoBehaviour:
@@ -811,6 +812,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 1606989379662040123}
+--- !u!114 &1253544664804440617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011415357488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec85a93fad93c84fa3ae0c4c0216206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
+    type: 3}
+  minimap: {fileID: 178365943766189048}
 --- !u!1 &1000011435856688
 GameObject:
   m_ObjectHideFlags: 0

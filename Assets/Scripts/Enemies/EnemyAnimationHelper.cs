@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 namespace Assets.Scripts.Enemies
 {
@@ -9,6 +10,7 @@ namespace Assets.Scripts.Enemies
     {
         [SerializeField] private Weapon weapon;
         [SerializeField] private Weapon weapon2;
+        Enemy enemy;
 
         private Animator anim;
         private PlayerManager player;
@@ -22,15 +24,18 @@ namespace Assets.Scripts.Enemies
         {
             weapon.AttackStart();
             this.gameObject.transform.LookAt(player.transform.position);
-            // print("attack start");
         }
 
         public void MeleeAttackEnd()
         {
             weapon.AttackEnd();
             anim.ResetTrigger("Attack");
-            
-            //  print("attack end");
+        }
+
+        public void MoveUnderground()
+        {
+            Vector3 under = new Vector3(transform.position.x, transform.position.y - 1.3f, transform.position.z);
+            transform.DOMove(under, 3f);
         }
     }
 

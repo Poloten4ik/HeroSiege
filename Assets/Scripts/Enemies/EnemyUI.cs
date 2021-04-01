@@ -10,12 +10,17 @@ namespace Assets.Scripts.Enemies
 
         public Slider enemyHealth;
         Enemy enemy;
+        ReciveDamageEnemy reciveDamageEnemy;
+
+        private void Awake()
+        {
+            enemy = GetComponent<Enemy>();
+            reciveDamageEnemy = GetComponent<ReciveDamageEnemy>();
+        }
 
         private void Start()
         {
-            enemy = GetComponent<Enemy>();
-            enemy.OnHealthChange += UpdateHealth;
-
+            reciveDamageEnemy.OnHealthChange += UpdateHealth;
             enemyHealth.maxValue = enemy.health;
             enemyHealth.value = enemy.health;
 

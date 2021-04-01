@@ -2553,6 +2553,7 @@ GameObject:
   - component: {fileID: -6773648204710237244}
   - component: {fileID: 2497850156385115853}
   - component: {fileID: 4766565395711843527}
+  - component: {fileID: 3561896637911812444}
   m_Layer: 11
   m_Name: Troll
   m_TagString: Untagged
@@ -2625,17 +2626,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949f998d1c2e5b47a63201146ef1a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 30
-  reward: 3
   followRadius: 15
   attackRadius: 3.5
   moveSpeed: 4
   attackSpeed: 2
   health: 120
+  exp: 30
+  reward: 3
   castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,
     type: 3}
-  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
-    type: 3}
+  enemyUI: {fileID: 5495952013973352877}
+  allEnemiesDead: 0
   activeState: 0
 --- !u!54 &3830895373456161838
 Rigidbody:
@@ -2728,6 +2729,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 4360257752434239206}
+--- !u!114 &3561896637911812444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012452689070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec85a93fad93c84fa3ae0c4c0216206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
+    type: 3}
+  minimap: {fileID: 7943751618760493423}
 --- !u!1 &1000012454212212
 GameObject:
   m_ObjectHideFlags: 0

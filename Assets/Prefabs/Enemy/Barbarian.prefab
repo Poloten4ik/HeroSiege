@@ -2274,6 +2274,7 @@ GameObject:
   - component: {fileID: 5946580665536520962}
   - component: {fileID: 6761896942411026198}
   - component: {fileID: 3193671363178476176}
+  - component: {fileID: 9062698209896512089}
   m_Layer: 11
   m_Name: Barbarian
   m_TagString: Untagged
@@ -2347,19 +2348,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949f998d1c2e5b47a63201146ef1a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 20
-  reward: 3
   followRadius: 15
   attackRadius: 3.5
   moveSpeed: 3.5
   attackSpeed: 0.6
   health: 100
+  exp: 20
+  reward: 3
   castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,
     type: 3}
-  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
-    type: 3}
-  enemySpawner: {fileID: 4900579156423972843, guid: 9b84f7ab13960bf4a8fa931ef991dd5f,
-    type: 3}
+  enemyUI: {fileID: 6304701816948497516}
   allEnemiesDead: 0
   activeState: 0
 --- !u!114 &2245136918158655887
@@ -2453,6 +2451,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 8071044754508293051}
+--- !u!114 &9062698209896512089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012548798854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec85a93fad93c84fa3ae0c4c0216206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
+    type: 3}
+  minimap: {fileID: 1315461400585890701}
 --- !u!1 &1000012600808072
 GameObject:
   m_ObjectHideFlags: 0

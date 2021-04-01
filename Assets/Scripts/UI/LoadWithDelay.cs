@@ -9,6 +9,7 @@ namespace Assets.Scripts.UI
     public class LoadWithDelay : MonoBehaviour
     {
         public Animator animator;
+        public GameObject faderImage;
         public void LoadSceneDelay()
         {
             StartCoroutine(LoadSceneWithDelay());
@@ -17,10 +18,11 @@ namespace Assets.Scripts.UI
 
         public IEnumerator LoadSceneWithDelay()
         {
+            faderImage.SetActive(true);
             yield return new WaitForSeconds(3);
-            SceneManager.LoadScene(1);
-            Time.timeScale = 1;
+            SceneManager.LoadScene(1);   
         }
+
     }
 }
 

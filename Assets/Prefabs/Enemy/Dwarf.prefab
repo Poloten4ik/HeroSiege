@@ -2181,6 +2181,7 @@ GameObject:
   - component: {fileID: 5531118271667132237}
   - component: {fileID: 4973375481297457097}
   - component: {fileID: 7020104210632433508}
+  - component: {fileID: -8454277678556721930}
   m_Layer: 11
   m_Name: Dwarf
   m_TagString: Untagged
@@ -2307,17 +2308,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949f998d1c2e5b47a63201146ef1a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 50
-  reward: 3
   followRadius: 15
   attackRadius: 3.5
   moveSpeed: 3.5
   attackSpeed: 0.8
   health: 100
+  exp: 50
+  reward: 3
   castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,
     type: 3}
-  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
-    type: 3}
+  enemyUI: {fileID: 4897610375643457642}
+  allEnemiesDead: 0
   activeState: 0
 --- !u!114 &7165072315935097002
 MonoBehaviour:
@@ -2410,6 +2411,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 8009698403682952196}
+--- !u!114 &-8454277678556721930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012401438022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec85a93fad93c84fa3ae0c4c0216206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
+    type: 3}
+  minimap: {fileID: 4995005758614622660}
 --- !u!1 &1000012419431980
 GameObject:
   m_ObjectHideFlags: 0
