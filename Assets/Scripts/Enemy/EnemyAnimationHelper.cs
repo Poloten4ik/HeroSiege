@@ -9,23 +9,28 @@ namespace Assets.Scripts.Enemy
     {
         [SerializeField] private Weapon weapon;
         [SerializeField] private Weapon weapon2;
+
         private Animator anim;
+        private PlayerManager player;
         void Start()
         {
             anim = GetComponent<Animator>();
+            player = PlayerManager.Instance;
         }
 
         public void MeleeAttackStart()
         {
             weapon.AttackStart();
-           // print("attack start");
+            this.gameObject.transform.LookAt(player.transform.position);
+            // print("attack start");
         }
 
         public void MeleeAttackEnd()
         {
             weapon.AttackEnd();
             anim.ResetTrigger("Attack");
-          //  print("attack end");
+            
+            //  print("attack end");
         }
     }
 
