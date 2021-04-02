@@ -10,6 +10,7 @@ namespace Assets.Scripts.UI
     {
         public Animator animator;
         public GameObject faderImage;
+
         public void LoadSceneDelay()
         {
             StartCoroutine(LoadSceneWithDelay());

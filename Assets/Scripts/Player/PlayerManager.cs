@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Player
 {
@@ -32,6 +33,15 @@ namespace Assets.Scripts.Player
         [SerializeField] private ParticleSystem levelUpEffect;
         [SerializeField] private FountainManager fountainManager;
         [SerializeField] private GameObject loseScreen;
+        [SerializeField] private Text currentLvlText;
+        [SerializeField] private Text damageText;
+        [SerializeField] private Weapon weapon;
+        
+
+        [Header("Sounds")]
+        public AudioSource audioSource;
+        [SerializeField] private AudioClip lvlUp;
+     
 
         [Header("Player Options")]
         [SerializeField] private int currentLvl = 1;
@@ -57,6 +67,8 @@ namespace Assets.Scripts.Player
             mainCamera = Camera.main;
             damageable.OnReceiveDamage += ReceiveDamage;
             currentHealth = maxHealth;
+            currentLvlText.text = currentLvl.ToString();
+            damageText.text = weapon.damage.ToString();
 
             StartCoroutine(HealthRegeneration());
         }
@@ -135,7 +147,7 @@ namespace Assets.Scripts.Player
             }
         }
 
-        private IEnumerator LoseScreen()
+        public IEnumerator LoseScreen()
         {
             yield return new WaitForSeconds(3);
             loseScreen.SetActive(true);
@@ -147,8 +159,10 @@ namespace Assets.Scripts.Player
             if (currentLvl < lvl)
             {
                 currentLvl = lvl;
+                currentLvlText.text = currentLvl.ToString();
                 maxHealth += 200;
                 levelUpEffect.Play();
+                audioSource.PlayOneShot(lvlUp);
             }
         }
 

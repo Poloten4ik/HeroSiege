@@ -704,6 +704,13 @@ ModelImporter:
       curves: []
       events:
       - time: 0
+        functionName: PlayerSoundEffect
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5027125
         functionName: StopMovespeed
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -726,6 +733,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.95395947
         functionName: StartMovespeed
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7141831
+        functionName: SlamSound
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Player;
+using Assets.Scripts.Sound;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +15,9 @@ namespace Assets.Scripts.Enemies
         [SerializeField] private GameObject floatingTextPrefab;
         [SerializeField] private GameObject minimap;
 
+        public AudioClip[] getHit;
+
+        AudioManager audioSource;
         Damageable damageable;
         Enemy enemy;
         Animator animator;
@@ -35,18 +39,22 @@ namespace Assets.Scripts.Enemies
 
         private void Start()
         {
-     
+            audioSource = AudioManager.Instance;
             player = PlayerManager.Instance;
             levelSystem = LevelSystem.Instance;
             damageable.OnReceiveDamage += ReciveDamage;
         }
         private void ReciveDamage(int damage)
         {
-            
+
             enemy.health = enemy.health - damage < 0 ? 0 : enemy.health - damage;
             animator.SetTrigger("GetHit");
             ShowFloatingText(damage);
             OnHealthChange();
+
+            int random = UnityEngine.Random.Range(0, getHit.Length);
+            audioSource.PlaySound(getHit[random]);
+
             if (enemy.health <= 0)
             {
                 col.enabled = false;

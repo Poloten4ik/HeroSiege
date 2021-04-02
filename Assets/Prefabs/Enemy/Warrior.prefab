@@ -209,6 +209,10 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 9139771393236594671, guid: 4d751dcf276a02d4e9f48db6b6c5d81b,
     type: 3}
   minimap: {fileID: 1951075571912962042}
+  getHit:
+  - {fileID: 8300000, guid: b648ac460e05bee4c998f9ace2b66700, type: 3}
+  - {fileID: 8300000, guid: ad5c2e09bc6c7d345bde9d5d29a63a30, type: 3}
+  - {fileID: 8300000, guid: c8c25ff887958a2478a0755eb027301f, type: 3}
 --- !u!1 &1000010315704092
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,2 @@
+[0402/185029.185:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Отказано в доступе. (0x5)
+[0402/185029.251:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Отказано в доступе. (0x5)

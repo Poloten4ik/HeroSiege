@@ -13,7 +13,14 @@ namespace Assets.Scripts.Boss
 
         [SerializeField] private GameObject bossPrefab;
         [SerializeField] private EnemySpawner enemySpawner;
-        [SerializeField] private PlayerManager player;
+        [SerializeField] private PlayerManager player;  
+        [SerializeField] private GameObject cinemachine;
+
+        [Header("Sounds")]
+        public AudioSource audioSource;
+        public AudioSource backgroundMusic;
+
+        [SerializeField] private AudioClip bossSpawn;
 
         public BossUI bossUI;
 
@@ -39,10 +46,22 @@ namespace Assets.Scripts.Boss
             {
                 var obj = Instantiate(bossPrefab, transform.position, transform.rotation);
                 var reciveDamageBoss = obj.GetComponent<ReciveDamageBoss>();
+                cinemachine.SetActive(true);
 
                 bossUI.gameObject.SetActive(true);
                 bossUI.Init(reciveDamageBoss);
+                audioSource.PlayOneShot(bossSpawn);
+                backgroundMusic.mute = true;
+                StartCoroutine(CinemachineOff());
             }
         }
+
+        private IEnumerator CinemachineOff()
+        {
+            yield return new WaitForSeconds(3);
+            backgroundMusic.mute = false;
+            cinemachine.SetActive(false);
+        }
+
     }
 }

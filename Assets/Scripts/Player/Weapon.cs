@@ -6,8 +6,8 @@ namespace Assets.Scripts.Player
 {
     public class Weapon : MonoBehaviour
     {
-        [SerializeField]
-        private int damage = 40;
+        
+        public int damage = 40;
 
         //[SerializeField] private ParticleSystem attackEffect;
 

@@ -11,6 +11,7 @@ namespace Assets.Scripts.Items
         [SerializeField] private int healAmount = 100;
         [SerializeField] private int currentAmount = 3;
         [SerializeField] private Text currentAmountText;
+        [SerializeField] private AudioClip flaskUse;
 
         PlayerManager player;
 
@@ -22,17 +23,21 @@ namespace Assets.Scripts.Items
 
         private void Update()
         {
-            FlasckUse();
+            if (Input.GetKeyDown(KeyCode.X) && currentAmount != 0)
+            {
+                FlasckUse();
+            }
+
+
         }
         public void FlasckUse()
         {
-            if (Input.GetKeyDown(KeyCode.X) && currentAmount != 0)
-            {
-                player.currentHealth = player.currentHealth + healAmount > player.maxHealth ? player.maxHealth : player.currentHealth + healAmount;
-                player.OnHealthChange();
-                currentAmount--;
-                currentAmountText.text = currentAmount.ToString();
-            }
+
+            player.currentHealth = player.currentHealth + healAmount > player.maxHealth ? player.maxHealth : player.currentHealth + healAmount;
+            player.OnHealthChange();
+            currentAmount--;
+            currentAmountText.text = currentAmount.ToString();
+            player.audioSource.PlayOneShot(flaskUse);
         }
     }
 
