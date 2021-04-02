@@ -215,7 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 2107985222}
-  getSword: {fileID: 8300000, guid: 3219875c0808c7e46b5ed92a9e3871b6, type: 3}
+  attackSound: []
+  slam: {fileID: 0}
+  getWeapon: {fileID: 8300000, guid: 3219875c0808c7e46b5ed92a9e3871b6, type: 3}
 --- !u!1001 &68036836
 PrefabInstance:
   m_ObjectHideFlags: 0

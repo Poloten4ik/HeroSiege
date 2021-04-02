@@ -49,4 +49,3 @@ MonoBehaviour:
   nextWaveDelay: 7
   numberOfEnemies: 20
   allNumberOfEnemies: 0
-  allEnemiesDied: 0

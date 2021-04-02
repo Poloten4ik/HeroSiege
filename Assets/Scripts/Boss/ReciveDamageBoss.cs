@@ -1,4 +1,6 @@
 ﻿using Assets.Scripts.Enemies;
+using Assets.Scripts.Sound;
+using Assets.Scripts.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,15 +16,20 @@ namespace Assets.Scripts.Boss
         [SerializeField] private GameObject floatingTextPrefab;
         [SerializeField] private BossUI bossUI;
 
+        public AudioClip[] getHit;
         public Enemy enemy;
+
+        AudioManager audioSource;
         Animator animator;
         Damageable damageable;
         NavMeshAgent agent; 
         CharacterController controller; 
         BossSpawner bossSpawner;
+        WinningScene winningScene;
 
         private void Awake()
-        { 
+        {
+
             animator = GetComponent<Animator>();
             damageable = GetComponent<Damageable>();
             agent = GetComponent<NavMeshAgent>();
@@ -32,8 +39,10 @@ namespace Assets.Scripts.Boss
 
         private void Start()
         {
+            audioSource = AudioManager.Instance;
             bossSpawner = BossSpawner.Instance;
             damageable.OnReceiveDamage += ReciveDamage;
+            winningScene = WinningScene.Instance;
         }
         private void ReciveDamage(int damage)
         {
@@ -41,6 +50,9 @@ namespace Assets.Scripts.Boss
             enemy.health = enemy.health - damage < 0 ? 0 : enemy.health - damage;
             animator.SetTrigger("GetHit");
             ShowFloatingText(damage);
+
+            int random = UnityEngine.Random.Range(0, getHit.Length);
+            audioSource.PlaySound(getHit[random]);
             OnHealthChange();
 
             if (enemy.health <= 0)
@@ -50,10 +62,11 @@ namespace Assets.Scripts.Boss
                 enemy.enabled = false;
                 bossSpawner.bossUI.gameObject.SetActive(false);
                 animator.SetTrigger("Dead");
-                Destroy(gameObject, 10f);
                 Time.timeScale = 0.5f;
+                winningScene.WinningCinemashine();
             }
         }
+
         private void ShowFloatingText(int damage)
         {
             var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);

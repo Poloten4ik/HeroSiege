@@ -13,7 +13,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private float rotationSpeed;
         [SerializeField] private LayerMask damageLayer;
         [SerializeField] private float comboRadius;
-        [SerializeField] private int slamDamage;
+        [SerializeField] public int slamDamage;
         [SerializeField] private ParticleSystem slamEffect;
 
         private Animator anim;

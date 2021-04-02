@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71b297230a18a042b88a961deb0c0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 150
 --- !u!1 &1000010424270928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,7 +2570,7 @@ Transform:
   m_GameObject: {fileID: 1000012452689070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4000012797001920}
   - {fileID: 4000010974569704}
@@ -2630,7 +2630,7 @@ MonoBehaviour:
   attackRadius: 3.5
   moveSpeed: 4
   attackSpeed: 2
-  health: 120
+  health: 500
   exp: 30
   reward: 3
   castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,

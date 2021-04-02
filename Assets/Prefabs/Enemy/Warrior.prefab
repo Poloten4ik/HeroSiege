@@ -97,7 +97,7 @@ MonoBehaviour:
   attackSpeed: 1
   health: 120
   exp: 30
-  reward: 3
+  reward: 7
   castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,
     type: 3}
   enemyUI: {fileID: 2971075611665812457}
@@ -1841,7 +1841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71b297230a18a042b88a961deb0c0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 200
+  damage: 10
 --- !u!65 &4908368449608279219
 BoxCollider:
   m_ObjectHideFlags: 0

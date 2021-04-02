@@ -2351,10 +2351,10 @@ MonoBehaviour:
   followRadius: 15
   attackRadius: 3.5
   moveSpeed: 3.5
-  attackSpeed: 0.6
-  health: 100
-  exp: 20
-  reward: 3
+  attackSpeed: 0.5
+  health: 300
+  exp: 100
+  reward: 50
   castlePosition: {fileID: 8150598454137015028, guid: 6beed0ba62a22f94fbc76b3b1fa8581f,
     type: 3}
   enemyUI: {fileID: 6304701816948497516}

@@ -36,6 +36,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private Text currentLvlText;
         [SerializeField] private Text damageText;
         [SerializeField] private Weapon weapon;
+        [SerializeField] private PlayerAnimationHelper playerAnimationHelper;
         
 
         [Header("Sounds")]
@@ -160,7 +161,11 @@ namespace Assets.Scripts.Player
             {
                 currentLvl = lvl;
                 currentLvlText.text = currentLvl.ToString();
+                damageText.text = weapon.damage.ToString();
                 maxHealth += 200;
+                weapon.damage += 25;
+                playerAnimationHelper.slamDamage += 50;
+                
                 levelUpEffect.Play();
                 audioSource.PlayOneShot(lvlUp);
             }

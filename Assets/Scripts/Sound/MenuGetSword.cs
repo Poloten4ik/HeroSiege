@@ -9,6 +9,7 @@ namespace Assets.Scripts.Sound
         public AudioSource audioSource;
         public AudioClip[] attackSound;
         public AudioClip slam;
+        public AudioClip getWeapon;
 
         public void PlayerSoundEffect()
         {
@@ -21,6 +22,11 @@ namespace Assets.Scripts.Sound
          public void SlamSound()
         {
             audioSource.PlayOneShot(slam);
+        }
+
+        public void GetWeapon()
+        {
+            audioSource.PlayOneShot(getWeapon);
         }
     }
 }

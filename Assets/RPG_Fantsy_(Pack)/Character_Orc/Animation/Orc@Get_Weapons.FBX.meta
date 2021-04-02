@@ -703,8 +703,8 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.47479668
-        functionName: SwordSoundEffect
+      - time: 0.47298837
+        functionName: GetWeapon
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
