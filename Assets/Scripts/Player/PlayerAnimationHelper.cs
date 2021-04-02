@@ -15,6 +15,8 @@ namespace Assets.Scripts.Player
         [SerializeField] private float comboRadius;
         [SerializeField] public int slamDamage;
         [SerializeField] private ParticleSystem slamEffect;
+        [SerializeField] private ParticleSystem attackEffect;
+        [SerializeField] private ParticleSystem attackEffect2;
 
         private Animator anim;
         private bool checkCombo;
@@ -126,6 +128,16 @@ namespace Assets.Scripts.Player
             anim.ResetTrigger("Attack");
             anim.ResetTrigger("Combo");
             print("combo");
+        }
+
+        public void AttackEffect()
+        {
+            attackEffect.Play();
+        }
+
+        public void Attack2Effect() 
+        {
+            attackEffect2.Play();
         }
 
         private void OnDrawGizmos()

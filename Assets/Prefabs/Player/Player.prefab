@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Bits: 2048
   comboRadius: 8
   slamDamage: 150
-  slamEffect: {fileID: 1726272665}
+  slamEffect: {fileID: 6533925112730152467}
 --- !u!65 &213552012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -131,9 +131,16 @@ MonoBehaviour:
   levelUpEffect: {fileID: 0}
   fountainManager: {fileID: 0}
   loseScreen: {fileID: 0}
+  currentLvlText: {fileID: 0}
+  damageText: {fileID: 0}
+  weapon: {fileID: 0}
+  playerAnimationHelper: {fileID: 0}
+  audioSource: {fileID: 0}
+  lvlUp: {fileID: 0}
   currentLvl: 1
   currentGold: 0
   isDead: 0
+  killedEnemies: 0
   maxHealth: 1000
   currentHealth: 0
   healthRegeneration: 1
@@ -162,9 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a8e152c4a8a2148aa4fff02f272233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLvl: 10
   experience: 0
   experienceToNextLevel: 100
-  playerLvl: 10
 --- !u!1 &2787337463534727841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,9 +1260,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1741343573}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1726272665 stripped
+--- !u!198 &6533925112730152467 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19800012, guid: c84922bb380a64ef6b5ac6b263070d52,
+  m_CorrespondingSourceObject: {fileID: 6533925114294183238, guid: c84922bb380a64ef6b5ac6b263070d52,
     type: 3}
   m_PrefabInstance: {fileID: 1741343573}
   m_PrefabAsset: {fileID: 0}
