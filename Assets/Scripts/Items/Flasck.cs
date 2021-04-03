@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Player;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,12 @@ namespace Assets.Scripts.Items
 {
     public class Flasck : MonoBehaviour
     {
-        [SerializeField] private int healAmount = 100;
-        [SerializeField] private int currentAmount = 3;
-        [SerializeField] private Text currentAmountText;
+
+        [SerializeField] private int healAmount = 100; 
         [SerializeField] private AudioClip flaskUse;
+
+        [SerializeField] public Text currentAmountText;
+        public int currentAmount = 3;
 
         PlayerManager player;
 

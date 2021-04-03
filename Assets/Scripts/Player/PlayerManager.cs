@@ -34,10 +34,11 @@ namespace Assets.Scripts.Player
         [SerializeField] private FountainManager fountainManager;
         [SerializeField] private GameObject loseScreen;
         [SerializeField] private Text currentLvlText;
-        [SerializeField] private Text damageText;
         [SerializeField] private Weapon weapon;
         [SerializeField] private PlayerAnimationHelper playerAnimationHelper;
-        
+        public Text damageText;
+
+
 
         [Header("Sounds")]
         public AudioSource audioSource;
@@ -161,9 +162,9 @@ namespace Assets.Scripts.Player
             {
                 currentLvl = lvl;
                 currentLvlText.text = currentLvl.ToString();
+                weapon.damage += 25;
                 damageText.text = weapon.damage.ToString();
                 maxHealth += 200;
-                weapon.damage += 25;
                 playerAnimationHelper.slamDamage += 50;
                 
                 levelUpEffect.Play();
